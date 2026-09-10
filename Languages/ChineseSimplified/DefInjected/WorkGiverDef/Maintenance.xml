@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_Service.label>整备植入体</RimCBM_Service.label>
+  <RimCBM_Service.verb>整备植入体</RimCBM_Service.verb>
+  <RimCBM_Service.gerund>正在整备植入体</RimCBM_Service.gerund>
+  <RimCBM_Recovery.label>回收植入体</RimCBM_Recovery.label>
+  <RimCBM_Recovery.verb>回收植入体</RimCBM_Recovery.verb>
+  <RimCBM_Recovery.gerund>正在回收植入体</RimCBM_Recovery.gerund>
+</LanguageData>

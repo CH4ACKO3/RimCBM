@@ -9,4 +9,13 @@
   <RimCBM_Sterilize.label>灭菌 植入体</RimCBM_Sterilize.label>
   <RimCBM_Sterilize.description>灭菌 植入体</RimCBM_Sterilize.description>
   <RimCBM_Sterilize.jobString>正在灭菌 植入体。</RimCBM_Sterilize.jobString>
+  <RimCBM_Recover.label>从遗体回收植入体</RimCBM_Recover.label>
+  <RimCBM_Recover.description>从遗体回收植入体</RimCBM_Recover.description>
+  <RimCBM_Recover.jobString>正在从遗体回收植入体。</RimCBM_Recover.jobString>
+  <RimCBM_Recycle.label>拆解烧毁植入体</RimCBM_Recycle.label>
+  <RimCBM_Recycle.description>拆解烧毁植入体</RimCBM_Recycle.description>
+  <RimCBM_Recycle.jobString>正在拆解烧毁植入体。</RimCBM_Recycle.jobString>
+  <RimCBM_MakePouches.label>制作灭菌袋 ×5</RimCBM_MakePouches.label>
+  <RimCBM_MakePouches.description>用布料和中性胺制作五只一次性灭菌袋。</RimCBM_MakePouches.description>
+  <RimCBM_MakePouches.jobString>正在制作灭菌袋。</RimCBM_MakePouches.jobString>
 </LanguageData>

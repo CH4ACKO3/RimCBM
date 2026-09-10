@@ -7,6 +7,7 @@ Plan implants around body space, power and maintenance. Inspired by the CBM conc
 - **Body grids:** fit shaped modules into body regions; use bionics and expansion modules to gain space.
 - **Surgery and hot swapping:** surgery prepares implants; deployment and rearrangement require pawn actions. Hot swapping requires support from both the module and its occupied cells.
 - **Shared energy:** manage W / Wd storage, generation, fuel, dedicated charging stations and automatic replenishment.
+- **Recovery and servicing:** dedicated corpse recovery and service tables, burnt-part recycling, and an autonomous autoclave with consumable pouches.
 - **Abilities and damage:** passive, toggle, one-shot and reactive abilities; durability, contamination, sterilization, EMP and configurable faults.
 - **Native controls:** an expandable health panel, one control Gizmo and context-sensitive right-click commands. Research has its own **Implants** tab.
 

@@ -16,6 +16,8 @@ public class RimCBMProbe : GameComponent
     static bool inputChecked;
     static int relocationTick;
     static Thing chargingBattery;
+    static Building_CBMAutoclave billChamber;
+    static Thing billImplant, billPouch;
     static int chargingStart;
     static int supplyTick;
     static float supplyChargeBefore;
@@ -236,6 +238,7 @@ public class RimCBMProbe : GameComponent
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
                 ConditionTests(Find.CurrentMap.mapPawns.FreeColonists.First(p => p.Name.ToStringShort == "Dynamic"));
                 SurgeryTests(pawn);
+                RecoveryTests(pawn);
                 EconomyTests(pawn);
                 BurdenTests();
                 CombatDamageTests(pawn);
@@ -282,6 +285,12 @@ public class RimCBMProbe : GameComponent
                 Check(fuelSource.stackCount == fuelCount && module.fuelState.units == 0, "cancelled refill leaves both stock and tank unchanged");
                 CBMSupply.Order(pawn, CBMSupply.RefillJob(pawn, module, fuelSource, false));
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
+                var chamber = SpawnAutoclave(pawn);
+                var sterilizing = ThingMaker.MakeThing(ThingDef.Named("RimCBM_BatteryItem"));
+                sterilizing.TryGetComp<CompCBMCondition>().condition = CBMCondition.Unsterile;
+                Check(chamber.TryLoad(sterilizing), "save fixture loads autoclave");
+                chamber.AdvanceCycle(250);
+                chamber.GetComp<CompPowerTrader>().PowerOn = false;
                 GameDataSaveLoader.SaveGame("RimCBM-supply");
                 phase = 52;
                 deadline = Time.realtimeSinceStartup + 1;
@@ -293,6 +302,11 @@ public class RimCBMProbe : GameComponent
             }
             else if (phase == 53)
             {
+                var chamber = Find.CurrentMap.listerThings.AllThings.OfType<Building_CBMAutoclave>().Single();
+                Check(chamber.Occupied && chamber.RemainingTicks == 14750 && chamber.GetDirectlyHeldThings()[0].TryGetComp<CompCBMCondition>().condition.HasFlag(CBMCondition.Unsterile), "chamber ownership, cycle and hygiene survive real save/load");
+                var held = chamber.GetDirectlyHeldThings()[0];
+                chamber.Destroy(DestroyMode.Deconstruct);
+                Check(held.Spawned && held.TryGetComp<CompCBMCondition>().condition.HasFlag(CBMCondition.Unsterile), "deconstructing active chamber returns unsterile contents");
                 var pawn = Find.CurrentMap.mapPawns.FreeColonists.First(p => p.Name.ToStringShort == "Supply");
                 var module = ImplantService.Modules(pawn).First(m => m.def.defName == "RimCBM_FuelGenerator");
                 Check(pawn.CurJobDef?.defName == "RimCBM_Refill" && pawn.CurJob.count == module.loadID && module.fuelState.preferred == ThingDefOf.Chemfuel,
@@ -377,9 +391,60 @@ public class RimCBMProbe : GameComponent
                 var state = CBMAbilities.State(rig, CBMAbilities.Specs(rig).First(a => a.id == "treat"));
                 Check(state.cooldownUntil > supplyTick && caster.CurJobDef?.defName != "RimCBM_CastAbility", "saved healing action completes and commits cooldown");
                 Check(caster.health.hediffSet.hediffs.OfType<Hediff_Injury>().Where(h => h.def == HediffDefOf.Cut).All(h => h.Severity < 10), "completed action heals native injury");
-                Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
-                phase = 5;
-                deadline = Time.realtimeSinceStartup + 1;
+                var map = caster.Map;
+                var location = map.Center + new IntVec3(20, 0, 20);
+                foreach (var cell in new CellRect(location.x - 4, location.z - 4, 9, 9).Cells)
+                {
+                    foreach (var obstacle in cell.GetThingList(map).Where(t => !(t is Pawn)).ToList()) obstacle.Destroy();
+                    map.terrainGrid.SetTerrain(cell, TerrainDefOf.Concrete);
+                    map.fogGrid.Unfog(cell);
+                }
+                var technician = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
+                GenSpawn.Spawn(technician, location + new IntVec3(0, 0, -3), map);
+                technician.skills.GetSkill(SkillDefOf.Crafting).Level = 12;
+                billChamber = (Building_CBMAutoclave)ThingMaker.MakeThing(ThingDef.Named("RimCBM_Autoclave"));
+                GenSpawn.Spawn(billChamber, location, map); billChamber.SetFaction(Faction.OfPlayer);
+                var battery = ThingMaker.MakeThing(ThingDef.Named("Battery"));
+                GenSpawn.Spawn(battery, location + new IntVec3(3, 0, 0), map); battery.SetFaction(Faction.OfPlayer);
+                battery.TryGetComp<CompPowerBattery>().SetStoredEnergyPct(1);
+                for (int x = 0; x < 3; x++)
+                {
+                    var wire = ThingMaker.MakeThing(ThingDef.Named("PowerConduit")); wire.SetFaction(Faction.OfPlayer);
+                    GenSpawn.Spawn(wire, location + new IntVec3(x, 0, 0), map);
+                }
+                map.powerNetManager.UpdatePowerNetsAndConnections_First();
+                billChamber.GetComp<CompPowerTrader>().PowerOn = true;
+                foreach (var existing in caster.Map.listerThings.AllThings.Where(t => t.def.defName == "RimCBM_BatteryItem").ToList()) existing.SetForbidden(true, false);
+                billImplant = ThingMaker.MakeThing(ThingDef.Named("RimCBM_BatteryItem"));
+                billImplant.TryGetComp<CompCBMCondition>().condition = CBMCondition.Unsterile;
+                billImplant.TryGetComp<CompCBMCondition>().modeId = "probe-sterilization";
+                GenPlace.TryPlaceThing(billImplant, technician.Position, caster.Map, ThingPlaceMode.Near);
+                billPouch = ThingMaker.MakeThing(ThingDef.Named("RimCBM_SterilizationPouch"));
+                GenPlace.TryPlaceThing(billPouch, technician.Position, caster.Map, ThingPlaceMode.Near);
+                var bill = (Bill_Production)DefDatabase<RecipeDef>.GetNamed("RimCBM_Sterilize").MakeNewBill();
+                billChamber.BillStack.AddBill(bill);
+                bill.ingredientFilter.SetDisallowAll(); bill.ingredientFilter.SetAllow(billImplant.def, true); bill.ingredientFilter.SetAllow(billPouch.def, true);
+                var job = ((WorkGiver_DoBill)DefDatabase<WorkGiverDef>.GetNamed("RimCBM_Service").Worker).JobOnThing(technician, billChamber, true);
+                Check(job?.def == JobDefOf.DoBill, "native workgiver discovers sterilization ingredients and creates DoBill job; result=" + job?.def.defName + ", implant=" + billImplant.Spawned + ", forbidden=" + billImplant.IsForbidden(technician) + ", reason=" + JobFailReason.Reason);
+                technician.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                phase = 80; supplyTick = Find.TickManager.TicksGame;
+                deadline = Time.realtimeSinceStartup + 35;
+                Find.TickManager.CurTimeSpeed = TimeSpeed.Superfast;
+            }
+            else if (phase == 80)
+            {
+                if (billChamber.Occupied)
+                {
+                    Check(billPouch.Destroyed && !billImplant.Destroyed && billImplant.ParentHolder == billChamber, "native bill consumes one pouch and transfers original implant into chamber; pouch=" + billPouch.Destroyed + ", original=" + billImplant.ThingID + ", held=" + billChamber.GetDirectlyHeldThings()[0].ThingID + ", owner=" + billImplant.ParentHolder);
+                    Check(billImplant.TryGetComp<CompCBMCondition>().condition.HasFlag(CBMCondition.Unsterile), "native loading does not sterilize instantly");
+                    billChamber.GetComp<CompPowerTrader>().PowerOn = true;
+                    billChamber.AdvanceCycle(15000);
+                    Check(billImplant.Spawned && CBMConditionUtility.CanInstall(billImplant).Allowed, "native bill and machine cycle produce reinstallable implant");
+                    Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
+                    phase = 5; deadline = Time.realtimeSinceStartup + 1;
+                }
+                else if (Time.realtimeSinceStartup > deadline)
+                    Check(false, "native autoclave load timed out; power=" + billChamber.GetComp<CompPowerTrader>().PowerOn);
             }
             else if (phase == 5 && Time.realtimeSinceStartup > deadline)
             {
@@ -1817,6 +1882,53 @@ public class RimCBMProbe : GameComponent
         finally { Rand.PopState(); }
     }
 
+    static Building_CBMAutoclave SpawnAutoclave(Pawn pawn)
+    {
+        var chamber = (Building_CBMAutoclave)ThingMaker.MakeThing(ThingDef.Named("RimCBM_Autoclave"));
+        var map = pawn.Map;
+        var cell = CellFinder.RandomClosewalkCellNear(pawn.Position, map, 9);
+        GenSpawn.Spawn(chamber, cell, map); chamber.SetFaction(Faction.OfPlayer);
+        chamber.GetComp<CompPowerTrader>().PowerOn = true;
+        return chamber;
+    }
+    static void RecoveryTests(Pawn pawn)
+    {
+        var oldBench = (Building_WorkTable)ThingMaker.MakeThing(ThingDef.Named("FabricationBench"));
+        var oldBill = (Bill_Production)DefDatabase<RecipeDef>.GetNamed("RimCBM_Sterilize").MakeNewBill();
+        oldBench.BillStack.AddBill(oldBill);
+        Check(!oldBill.ShouldDoNow(), "legacy sterilization bill cannot consume supplies on the wrong table");
+        oldBench.Destroy();
+        foreach (var name in new[] { "RecoveryTable", "ServiceBench", "Autoclave" })
+        {
+            var buildingDef = ThingDef.Named("RimCBM_" + name);
+            Check(buildingDef.graphicData.Graphic.MatAt(Rot4.South).mainTexture != BaseContent.BadTex
+                && buildingDef.graphicData.Graphic.MatAt(Rot4.East).mainTexture != BaseContent.BadTex,
+                "equipment texture resolves for native rotations: " + name);
+        }
+        var subject = PawnGenerator.GeneratePawn(PawnKindDefOf.Colonist, Faction.OfPlayer);
+        GenSpawn.Spawn(subject, CellFinder.RandomClosewalkCellNear(pawn.Position, pawn.Map, 5), pawn.Map);
+        var part = subject.RaceProps.body.corePart;
+        var module = Prepare(subject, part, "Battery");
+        var bay = Prepare(subject, part, "Bay");
+        module.fuelState.units = 2.5f; module.fuelState.item = ThingDefOf.Chemfuel;
+        subject.Kill(null);
+        var corpse = subject.Corpse;
+        var worker = (Recipe_ServiceCBM)DefDatabase<RecipeDef>.GetNamed("RimCBM_Recover").Worker;
+        Check(worker.Accepts(corpse), "recovery accepts a corpse with actual implants");
+        int before = pawn.Map.listerThings.AllThings.Count(t => t.TryGetComp<CompCBMCondition>() != null);
+        worker.ConsumeIngredient(corpse, worker.recipe, pawn.Map);
+        worker.Notify_IterationCompleted(pawn, new List<Thing> { corpse });
+        Check(!corpse.Destroyed && !ImplantService.Modules(subject).Any() && !worker.Accepts(corpse), "recovery preserves corpse and prevents repeat harvesting");
+        Check(pawn.Map.listerThings.AllThings.Count(t => t.TryGetComp<CompCBMCondition>() != null) == before + 2, "each real implant produces exactly one recovered item");
+        var recovered = pawn.Map.listerThings.AllThings.First(t => t.TryGetComp<CompCBMCondition>()?.fuelState.units == 2.5f);
+        Check(recovered.TryGetComp<CompCBMCondition>().condition.HasFlag(CBMCondition.Dirty | CBMCondition.Unsterile), "recovered contents preserve fuel and acquire both hygiene states");
+        recovered.TryGetComp<CompCBMCondition>().condition |= CBMCondition.BurntOut;
+        var recycle = (Recipe_ServiceCBM)DefDatabase<RecipeDef>.GetNamed("RimCBM_Recycle").Worker;
+        Check(recycle.Accepts(recovered), "burnt implant can be recycled");
+        recycle.Notify_IterationCompleted(pawn, new List<Thing> { recovered });
+        Check(recovered.Destroyed, "recycling destroys the source exactly once");
+        corpse.Destroy();
+    }
     static void SurgeryTests(Pawn pawn)
     {
         var doctor = pawn.Map.mapPawns.FreeColonists.First(p => p != pawn && p.Name.ToStringShort != "Dynamic");
@@ -1908,6 +2020,23 @@ public class RimCBMProbe : GameComponent
             Check(worker.Accepts(failedItem), "maintenance accepts correct state: " + service);
             worker.ConsumeIngredient(failedItem, serviceRecipe, pawn.Map);
             worker.Notify_IterationCompleted(doctor, new List<Thing> { failedItem });
+            if (service == "Sterilize")
+            {
+                Check(comp.condition.HasFlag(CBMCondition.Unsterile), "sterilization cannot bypass a real chamber");
+                var chamber = SpawnAutoclave(pawn);
+                Check(chamber.TryLoad(failedItem) && chamber.Occupied && !failedItem.Spawned, "chamber takes ownership of the same implant");
+                var other = ThingMaker.MakeThing(failedItem.def); other.TryGetComp<CompCBMCondition>().condition = CBMCondition.Unsterile;
+                Check(!chamber.TryLoad(other) && !chamber.CurrentlyUsableForBills(), "busy chamber rejects second item and blocks bill scheduling"); other.Destroy();
+                chamber.GetComp<CompPowerTrader>().PowerOn = false;
+                chamber.AdvanceCycle(15000);
+                Check(chamber.RemainingTicks == 15000 && comp.condition.HasFlag(CBMCondition.Unsterile), "power loss pauses sterilization without changing hygiene");
+                chamber.GetComp<CompPowerTrader>().PowerOn = true;
+                chamber.AdvanceCycle(14999);
+                Check(chamber.Occupied && comp.condition.HasFlag(CBMCondition.Unsterile), "partial cycle never sterilizes early");
+                chamber.AdvanceCycle(1);
+                Check(!chamber.Occupied && failedItem.Spawned, "finished cycle ejects the original item");
+                chamber.Destroy();
+            }
             if (service == "Clean")
                 Check(!comp.condition.HasFlag(CBMCondition.Dirty) && comp.condition.HasFlag(CBMCondition.Unsterile) && !CBMConditionUtility.CanInstall(failedItem).Allowed, "cleaning removes dirt without sterilizing or permitting installation");
             if (service == "Repair")

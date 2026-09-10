@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_AutoclaveCycle>{0}: {1} remaining (power and intact machinery required).</RC_AutoclaveCycle>
+  <RC_AutoclaveEmpty>Empty. Add a sterilization bill to load one implant.</RC_AutoclaveEmpty>
+  <RC_AutoclaveEject>Eject contents</RC_AutoclaveEject>
+  <RC_AutoclaveEjectHelp>An incomplete cycle leaves the implant unsterile. Consumed pouches are not refunded.</RC_AutoclaveEjectHelp>
+</LanguageData>

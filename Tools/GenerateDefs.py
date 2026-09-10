@@ -1,6 +1,6 @@
 """Regenerate prototype Defs and translations; no installed game files are changed."""
 from pathlib import Path
-from xml.etree.ElementTree import Element, SubElement, indent, ElementTree
+from xml.etree.ElementTree import Element, SubElement, indent, ElementTree, tostring
 
 import argparse
 import tempfile
@@ -30,9 +30,7 @@ def save(root, path):
     dest = ROOT / path
     dest.parent.mkdir(parents=True, exist_ok=True)
     indent(root, space="  ")
-    ElementTree(root).write(dest, encoding="utf-8", xml_declaration=True)
-    with dest.open("ab") as output:
-        output.write(b"\n")
+    dest.write_bytes(tostring(root, encoding="utf-8", xml_declaration=True) + b"\n")
 
 modules = [
     ("FuelGenerator", "fuel generator prototype", "燃料发电测试机", 1, 2, True, "None", False),
@@ -598,6 +596,9 @@ for language, values in {
     data = Element("LanguageData")
     node(data, "RimCBM_CastAbility.reportString", "正在使用植入体能力。" if language == "ChineseSimplified" else "using implant ability.")
     save(data, f"Languages/{language}/DefInjected/JobDef/AbilityActions.xml")
+
+from MaintenanceDefs import build as build_maintenance
+build_maintenance(ROOT)
 
 if args.check:
     differences = [str(p.relative_to(ROOT)) for p in ROOT.rglob("*") if p.is_file()

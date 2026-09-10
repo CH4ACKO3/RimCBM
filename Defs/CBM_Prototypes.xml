@@ -7,6 +7,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -169,6 +170,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -315,6 +317,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -476,6 +479,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -612,6 +616,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -750,6 +755,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -882,6 +888,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -997,6 +1004,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -1112,6 +1120,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -1235,6 +1244,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -1368,6 +1378,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>
@@ -1501,6 +1512,7 @@
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
+      <li>RimCBM_Implants</li>
     </thingCategories>
     <graphicData>
       <texPath>Things/Item/Health/HealthItem</texPath>

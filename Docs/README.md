@@ -11,6 +11,7 @@
 | 能力配置 | [Abilities](Abilities.md) |
 | 释放动作与地图外规则 | [AbilityActions](AbilityActions.md) |
 | 对外 Worker、实例状态与事件契约 | [ExtensionContracts](ExtensionContracts.md) |
+| 回收、整备与灭菌设备 | [Maintenance](Maintenance.md) |
 | 燃料、充电、补给 | [Supply](Supply.md) |
 | 受击、耐久、故障 | [CombatDamage](CombatDamage.md) |
 | 重量与累赘 | [Burden](Burden.md) |

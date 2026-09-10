@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RimCBM_ServiceBench</defName>
+    <label>implant service bench</label>
+    <description>A powered bench for cleaning, repairing and dismantling recovered implants. Repair requires a clean implant and leaves it unsterile.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <size>(3,2)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/RimCBM/ServiceBench</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shaderType>Cutout</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4500</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.3</Flammability>
+      <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
+    </statBases>
+    <costList>
+      <Steel>180</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>RimCBM_Reconditioning</li>
+    </researchPrerequisites>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <unpoweredWorkTableWorkSpeedFactor>0</unpoweredWorkTableWorkSpeedFactor>
+      <deconstructible>true</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RimCBM_RecoveryTable</defName>
+    <label>implant recovery table</label>
+    <description>Dissect corpses to recover only implants actually present. Medical skill reduces extraction damage and burnout risk. The corpse remains.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <size>(2,2)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/RimCBM/RecoveryTable</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shaderType>Cutout</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4500</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.3</Flammability>
+      <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
+    </statBases>
+    <costList>
+      <Steel>140</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>RimCBM_Reconditioning</li>
+    </researchPrerequisites>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <unpoweredWorkTableWorkSpeedFactor>0</unpoweredWorkTableWorkSpeedFactor>
+      <deconstructible>true</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>120</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RimCBM_Autoclave</defName>
+    <label>implant autoclave</label>
+    <description>Load one clean implant with a sterilization pouch. Runs unattended for six in-game hours while powered. Power loss pauses the cycle; contents and progress are saved. Output remains sterile until repair or contamination.</description>
+    <thingClass>RimCBM.Building_CBMAutoclave</thingClass>
+    <size>(2,2)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <tickerType>Rare</tickerType>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Building/RimCBM/Autoclave</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shaderType>Cutout</shaderType>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>4500</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.3</Flammability>
+      <WorkTableWorkSpeedFactor>1</WorkTableWorkSpeedFactor>
+    </statBases>
+    <costList>
+      <Steel>220</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>RimCBM_Reconditioning</li>
+    </researchPrerequisites>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <building>
+      <unpoweredWorkTableWorkSpeedFactor>0</unpoweredWorkTableWorkSpeedFactor>
+      <deconstructible>true</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <modExtensions>
+      <li Class="RimCBM.CBMAutoclaveExtension">
+        <cycleTicks>15000</cycleTicks>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>RimCBM_SterilizationPouch</defName>
+    <label>sterilization pouch</label>
+    <description>A disposable sterilization wrap and process indicator, consumed when loading an implant autoclave.</description>
+    <stackLimit>75</stackLimit>
+    <graphicData>
+      <texPath>Things/Item/RimCBM/SterilizationPouch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <Mass>0.03</Mass>
+      <MarketValue>3</MarketValue>
+      <Flammability>1</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingCategoryDef>
+    <defName>RimCBM_Implants</defName>
+    <label>implants</label>
+    <parent>Manufactured</parent>
+  </ThingCategoryDef>
+  <ResearchProjectDef>
+    <defName>RimCBM_Reconditioning</defName>
+    <label>implant reconditioning</label>
+    <description>Specialized recovery, cleaning, repair and autoclave equipment.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>1</researchViewY>
+    <tab>RimCBM</tab>
+    <prerequisites>
+      <li>RimCBM_Integration</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  <WorkGiverDef>
+    <defName>RimCBM_Service</defName>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>90</priorityInType>
+    <label>service implants</label>
+    <verb>service</verb>
+    <gerund>servicing implants</gerund>
+    <fixedBillGiverDefs>
+      <li>RimCBM_ServiceBench</li>
+      <li>RimCBM_Autoclave</li>
+    </fixedBillGiverDefs>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RimCBM_Recovery</defName>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Doctor</workType>
+    <priorityInType>90</priorityInType>
+    <label>recover implants</label>
+    <verb>service</verb>
+    <gerund>servicing implants</gerund>
+    <fixedBillGiverDefs>
+      <li>RimCBM_RecoveryTable</li>
+    </fixedBillGiverDefs>
+  </WorkGiverDef>
+</Defs>

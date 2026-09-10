@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_ServiceBench.label>植入体整备台</RimCBM_ServiceBench.label>
+  <RimCBM_ServiceBench.description>用于清洗、维修和拆解回收植入体的电动工作台。维修前需清洗，维修后仍需灭菌。</RimCBM_ServiceBench.description>
+  <RimCBM_RecoveryTable.label>植入体回收台</RimCBM_RecoveryTable.label>
+  <RimCBM_RecoveryTable.description>解剖遗体，回收其实际携带的植入体。医疗技能降低损伤和烧毁概率；操作后保留遗体。</RimCBM_RecoveryTable.description>
+  <RimCBM_Autoclave.label>植入体高压灭菌釜</RimCBM_Autoclave.label>
+  <RimCBM_Autoclave.description>装入一个清洁植入体和一只灭菌袋后，自动运行六个游戏小时。断电暂停，内容和进度可保存。完成后保持无菌，直到维修或污染。</RimCBM_Autoclave.description>
+  <RimCBM_SterilizationPouch.label>灭菌袋</RimCBM_SterilizationPouch.label>
+  <RimCBM_SterilizationPouch.description>一次性灭菌包材和指示条，在高压灭菌釜装料时消耗。</RimCBM_SterilizationPouch.description>
+</LanguageData>

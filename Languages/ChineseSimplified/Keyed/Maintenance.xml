@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_AutoclaveCycle>{0}：剩余 {1}（需要通电且设备完好）。</RC_AutoclaveCycle>
+  <RC_AutoclaveEmpty>空闲。在清单中添加灭菌任务以装入植入体。</RC_AutoclaveEmpty>
+  <RC_AutoclaveEject>取出内容</RC_AutoclaveEject>
+  <RC_AutoclaveEjectHelp>中途取出仍为未灭菌，已消耗的灭菌袋不返还。</RC_AutoclaveEjectHelp>
+</LanguageData>

@@ -10,7 +10,7 @@
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
     <recipeUsers>
-      <li>CraftingSpot</li>
+      <li>RimCBM_ServiceBench</li>
     </recipeUsers>
     <modExtensions>
       <li Class="RimCBM.CBMServiceExtension">
@@ -20,19 +20,16 @@
     <ingredients>
       <li>
         <filter>
+          <categories>
+            <li>RimCBM_Implants</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
           <thingDefs>
-            <li>RimCBM_FuelGeneratorItem</li>
-            <li>RimCBM_TargetRigItem</li>
-            <li>RimCBM_AbilityRigItem</li>
-            <li>RimCBM_BatteryItem</li>
-            <li>RimCBM_MetabolicItem</li>
-            <li>RimCBM_OverdriveItem</li>
-            <li>RimCBM_PlaceholderItem</li>
-            <li>RimCBM_InterfaceItem</li>
-            <li>RimCBM_ControllerItem</li>
-            <li>RimCBM_RowItem</li>
-            <li>RimCBM_ColumnItem</li>
-            <li>RimCBM_BayItem</li>
+            <li>Cloth</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -40,19 +37,11 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>RimCBM_FuelGeneratorItem</li>
-        <li>RimCBM_TargetRigItem</li>
-        <li>RimCBM_AbilityRigItem</li>
-        <li>RimCBM_BatteryItem</li>
-        <li>RimCBM_MetabolicItem</li>
-        <li>RimCBM_OverdriveItem</li>
-        <li>RimCBM_PlaceholderItem</li>
-        <li>RimCBM_InterfaceItem</li>
-        <li>RimCBM_ControllerItem</li>
-        <li>RimCBM_RowItem</li>
-        <li>RimCBM_ColumnItem</li>
-        <li>RimCBM_BayItem</li>
+        <li>Cloth</li>
       </thingDefs>
+      <categories>
+        <li>RimCBM_Implants</li>
+      </categories>
     </fixedIngredientFilter>
   </RecipeDef>
   <RecipeDef>
@@ -65,7 +54,7 @@
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
     <recipeUsers>
-      <li>FabricationBench</li>
+      <li>RimCBM_ServiceBench</li>
     </recipeUsers>
     <modExtensions>
       <li Class="RimCBM.CBMServiceExtension">
@@ -75,20 +64,9 @@
     <ingredients>
       <li>
         <filter>
-          <thingDefs>
-            <li>RimCBM_FuelGeneratorItem</li>
-            <li>RimCBM_TargetRigItem</li>
-            <li>RimCBM_AbilityRigItem</li>
-            <li>RimCBM_BatteryItem</li>
-            <li>RimCBM_MetabolicItem</li>
-            <li>RimCBM_OverdriveItem</li>
-            <li>RimCBM_PlaceholderItem</li>
-            <li>RimCBM_InterfaceItem</li>
-            <li>RimCBM_ControllerItem</li>
-            <li>RimCBM_RowItem</li>
-            <li>RimCBM_ColumnItem</li>
-            <li>RimCBM_BayItem</li>
-          </thingDefs>
+          <categories>
+            <li>RimCBM_Implants</li>
+          </categories>
         </filter>
         <count>1</count>
       </li>
@@ -103,20 +81,11 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>RimCBM_FuelGeneratorItem</li>
-        <li>RimCBM_TargetRigItem</li>
-        <li>RimCBM_AbilityRigItem</li>
-        <li>RimCBM_BatteryItem</li>
-        <li>RimCBM_MetabolicItem</li>
-        <li>RimCBM_OverdriveItem</li>
-        <li>RimCBM_PlaceholderItem</li>
-        <li>RimCBM_InterfaceItem</li>
-        <li>RimCBM_ControllerItem</li>
-        <li>RimCBM_RowItem</li>
-        <li>RimCBM_ColumnItem</li>
-        <li>RimCBM_BayItem</li>
         <li>ComponentIndustrial</li>
       </thingDefs>
+      <categories>
+        <li>RimCBM_Implants</li>
+      </categories>
     </fixedIngredientFilter>
     <skillRequirements>
       <Crafting>6</Crafting>
@@ -128,11 +97,11 @@
     <description>sterilize implant</description>
     <jobString>sterilize implant.</jobString>
     <workerClass>RimCBM.Recipe_ServiceCBM</workerClass>
-    <workAmount>2400</workAmount>
+    <workAmount>300</workAmount>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <workSkill>Crafting</workSkill>
     <recipeUsers>
-      <li>FabricationBench</li>
+      <li>RimCBM_Autoclave</li>
     </recipeUsers>
     <modExtensions>
       <li Class="RimCBM.CBMServiceExtension">
@@ -142,27 +111,16 @@
     <ingredients>
       <li>
         <filter>
-          <thingDefs>
-            <li>RimCBM_FuelGeneratorItem</li>
-            <li>RimCBM_TargetRigItem</li>
-            <li>RimCBM_AbilityRigItem</li>
-            <li>RimCBM_BatteryItem</li>
-            <li>RimCBM_MetabolicItem</li>
-            <li>RimCBM_OverdriveItem</li>
-            <li>RimCBM_PlaceholderItem</li>
-            <li>RimCBM_InterfaceItem</li>
-            <li>RimCBM_ControllerItem</li>
-            <li>RimCBM_RowItem</li>
-            <li>RimCBM_ColumnItem</li>
-            <li>RimCBM_BayItem</li>
-          </thingDefs>
+          <categories>
+            <li>RimCBM_Implants</li>
+          </categories>
         </filter>
         <count>1</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>MedicineIndustrial</li>
+            <li>RimCBM_SterilizationPouch</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -170,23 +128,125 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>RimCBM_FuelGeneratorItem</li>
-        <li>RimCBM_TargetRigItem</li>
-        <li>RimCBM_AbilityRigItem</li>
-        <li>RimCBM_BatteryItem</li>
-        <li>RimCBM_MetabolicItem</li>
-        <li>RimCBM_OverdriveItem</li>
-        <li>RimCBM_PlaceholderItem</li>
-        <li>RimCBM_InterfaceItem</li>
-        <li>RimCBM_ControllerItem</li>
-        <li>RimCBM_RowItem</li>
-        <li>RimCBM_ColumnItem</li>
-        <li>RimCBM_BayItem</li>
-        <li>MedicineIndustrial</li>
+        <li>RimCBM_SterilizationPouch</li>
       </thingDefs>
+      <categories>
+        <li>RimCBM_Implants</li>
+      </categories>
     </fixedIngredientFilter>
     <skillRequirements>
       <Crafting>3</Crafting>
     </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>RimCBM_Recover</defName>
+    <label>recover implants from corpse</label>
+    <description>recover implants from corpse</description>
+    <jobString>recover implants from corpse.</jobString>
+    <workerClass>RimCBM.Recipe_ServiceCBM</workerClass>
+    <workAmount>6000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <recipeUsers>
+      <li>RimCBM_RecoveryTable</li>
+    </recipeUsers>
+    <skillRequirements>
+      <Medicine>4</Medicine>
+    </skillRequirements>
+    <modExtensions>
+      <li Class="RimCBM.CBMServiceExtension">
+        <service>Recover</service>
+      </li>
+    </modExtensions>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>CorpsesHumanlike</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>RimCBM_Recycle</defName>
+    <label>dismantle burnt-out implant</label>
+    <description>dismantle burnt-out implant</description>
+    <jobString>dismantle burnt-out implant.</jobString>
+    <workerClass>RimCBM.Recipe_ServiceCBM</workerClass>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>RimCBM_ServiceBench</li>
+    </recipeUsers>
+    <skillRequirements>
+      <Crafting>4</Crafting>
+    </skillRequirements>
+    <modExtensions>
+      <li Class="RimCBM.CBMServiceExtension">
+        <service>Recycle</service>
+      </li>
+    </modExtensions>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>RimCBM_Implants</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>RimCBM_Implants</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>RimCBM_MakePouches</defName>
+    <label>make sterilization pouches x5</label>
+    <description>Make five disposable sterilization pouches from cloth and neutroamine.</description>
+    <jobString>making sterilization pouches.</jobString>
+    <workAmount>600</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>RimCBM_ServiceBench</li>
+    </recipeUsers>
+    <products>
+      <RimCBM_SterilizationPouch>5</RimCBM_SterilizationPouch>
+    </products>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
   </RecipeDef>
 </Defs>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600"><rect width="1280" height="600" fill="#41493e"/><svg x="30" y="125" width="300" height="300" viewBox="0 0 512 512"><g stroke="#282b29" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M64 423h65v55H64zm319 0h65v55h-65" fill="#494f47"/>
+<rect x="42" y="40" width="428" height="411" rx="19" fill="#69736b"/>
+<rect x="28" y="27" width="456" height="388" rx="24" fill="#a4aaa0"/>
+<rect x="48" y="47" width="294" height="344" rx="40" fill="#747f78"/>
+<rect x="62" y="61" width="266" height="317" rx="32" fill="#b6b8a9"/>
+<path d="M100 111l185 0m-198 49h211m-211 49h211m-211 49h211m-198 49h185" stroke="#8a9489" stroke-width="5"/>
+<rect x="119" y="67" width="151" height="56" rx="18" fill="#89998b"/>
+<path d="M166 345h70" stroke="#5b675e" stroke-width="8"/>
+<rect x="359" y="125" width="98" height="224" rx="11" fill="#606c63"/>
+<path d="M383 161v75m37-75v98" stroke="#bec1ae" stroke-width="8"/>
+<path d="M379 235l13 26m20-3l12 25" stroke="#333e38" stroke-width="11"/>
+<circle cx="405" cy="79" r="22" fill="#4e5b52"/>
+<path d="M405 80V19h-62l-36 54" fill="none" stroke="#4d584f" stroke-width="15"/>
+<ellipse cx="301" cy="84" rx="34" ry="22" fill="#d0ceae"/>
+<path d="M190 441h129" stroke="#b4b8a8" stroke-width="8"/></g></svg><text x="180.0" y="510" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#c3c6b5">RECOVERY</text><svg x="350" y="170" width="430" height="287" viewBox="0 0 768 512"><g stroke="#282b29" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M50 436h72v42H50zm596 0h72v42h-72" fill="#454942"/>
+<rect x="27" y="67" width="714" height="388" rx="15" fill="#61695e"/>
+<path d="M31 378h706v64H31" fill="#4e554d"/>
+<rect x="25" y="43" width="718" height="350" rx="15" fill="#aaa99b"/>
+<path d="M42 59h683M42 372h683" stroke="#d0ccbb" stroke-width="6"/>
+<rect x="51" y="74" width="199" height="229" rx="15" fill="#646f6c"/>
+<rect x="66" y="90" width="169" height="194" rx="26" fill="#8c9b99"/>
+<ellipse cx="149" cy="188" rx="25" ry="18" fill="#444e4b"/>
+<path d="M93 96V58q0-23 26-23h31v41" fill="none" stroke="#454c46" stroke-width="16"/>
+<path d="M94 95V58q0-23 25-23h31" fill="none" stroke="#b9bcb0" stroke-width="6"/>
+<rect x="279" y="99" width="250" height="246" rx="6" fill="#637568"/>
+<path d="M301 122h204M301 320h204" stroke="#7c8a79" stroke-width="3"/>
+<rect x="344" y="164" width="102" height="99" rx="10" fill="#94958a"/>
+<path d="M367 150v-19m26 19v-19m27 19v-19m-53 146v-14m26 14v-14m27 14v-14" stroke="#b8ad84" stroke-width="9"/>
+<rect x="369" y="187" width="52" height="49" rx="3" fill="#444c43"/>
+<path d="M457 245l48 56" stroke="#393e38" stroke-width="12"/><path d="M491 285l24 28" stroke="#a69870" stroke-width="15"/>
+<rect x="558" y="83" width="149" height="123" rx="9" fill="#535e54"/>
+<rect x="576" y="101" width="78" height="55" rx="3" fill="#788e82"/>
+<circle cx="680" cy="126" r="12" fill="#b4b09b"/>
+<path d="M579 178h45m13 0h13" stroke="#b4b09b" stroke-width="5"/>
+<path d="M612 207q-20 42 31 52t-10 66" fill="none" stroke="#464b43" stroke-width="9"/>
+<rect x="564" y="286" width="29" height="62" rx="4" fill="#bab39b"/><path d="M578 286v-26" stroke="#636b65" stroke-width="7"/>
+<path d="M95 417h117m344 0h117" stroke="#b1b1a0" stroke-width="8"/></g></svg><text x="565.0" y="510" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#c3c6b5">SERVICE</text><svg x="810" y="125" width="300" height="300" viewBox="0 0 512 512"><g stroke="#282b29" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M80 415h58v61H80zm294 0h58v61h-58" fill="#3f4944"/>
+<rect x="45" y="35" width="422" height="410" rx="26" fill="#647269"/>
+<path d="M55 362h402v65H55" fill="#4a5850"/>
+<rect x="37" y="24" width="438" height="354" rx="25" fill="#a7afa1"/>
+<path d="M62 45h388" stroke="#d0d0ba" stroke-width="6"/>
+<rect x="62" y="64" width="386" height="56" rx="9" fill="#5c6b61"/>
+<rect x="81" y="78" width="107" height="29" rx="3" fill="#859e89"/>
+<path d="M96 92h33m15 0h25" stroke="#ced0af" stroke-width="5"/>
+<circle cx="398" cy="92" r="12" fill="#94a782"/><circle cx="360" cy="92" r="10" fill="#a89a72"/>
+<ellipse cx="231" cy="237" rx="142" ry="117" fill="#606b63"/>
+<ellipse cx="231" cy="230" rx="125" ry="102" fill="#c1c2b0"/>
+<ellipse cx="231" cy="230" rx="100" ry="81" fill="#939e92"/>
+<path d="M231 175v110m-68-55h136" stroke="#454f48" stroke-width="16"/>
+<path d="M231 176v105m-64-53h124" stroke="#bbc0ae" stroke-width="6"/>
+<circle cx="231" cy="230" r="22" fill="#626f62"/>
+<rect x="82" y="207" width="32" height="49" rx="5" fill="#8a9889"/>
+<rect x="351" y="203" width="32" height="51" rx="5" fill="#869480"/>
+<path d="M406 164v143m18-143v143" stroke="#637366" stroke-width="7"/>
+<path d="M94 406h103m118 0h103" stroke="#8c9a88" stroke-width="6"/></g></svg><text x="960.0" y="510" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#c3c6b5">AUTOCLAVE</text><svg x="1130" y="230" width="110" height="110" viewBox="0 0 256 256"><g stroke="#282b29" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M51 28h154l11 200H39z" fill="#c5c5ae"/>
+<path d="M51 28h154l2 30H49z" fill="#778e83"/>
+<path d="M54 210h147" stroke="#919d8b" stroke-width="5"/>
+<rect x="66" y="77" width="124" height="106" rx="12" fill="#8eaaa0"/>
+<rect x="88" y="102" width="81" height="57" rx="8" fill="#7e8776"/>
+<path d="M104 94v-9m23 9v-9m23 9v-9m-46 83v-9m23 9v-9m23 9v-9" stroke="#b6b491" stroke-width="7"/>
+<path d="M71 195h31m14 0h31" stroke="#535f4e" stroke-width="5"/></g></svg><text x="1185.0" y="510" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#c3c6b5">POUCH</text><text x="40" y="58" font-family="sans-serif" font-size="28" fill="#e1dfcd">RimCBM / Recovery &amp; reconditioning</text></svg>

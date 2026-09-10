@@ -30,6 +30,19 @@ def repository():
             for ext in node.findall("modExtensions/li"):
                 if ext.get("Class") == "RimCBM.CBMExtension":
                     item_owners.append(ext.findtext("item"))
+    for path in (ROOT / "Defs").rglob("*.xml"):
+        for node in ET.parse(path).getroot():
+            if node.tag == "WorkGiverDef":
+                require(node.findtext("giverClass"), f"Missing WorkGiver giverClass: {node.findtext('defName')}")
+            texture = node.findtext("graphicData/texPath", "")
+            if "/RimCBM/" in texture:
+                image = ROOT / "Textures" / (texture + ".png")
+                require(image.is_file(), f"Missing texture: {texture}")
+                header = image.read_bytes()[:26]
+                require(header[:8] == b"\x89PNG\r\n\x1a\n", f"Not PNG: {image}")
+                require(int.from_bytes(header[16:20], "big") % 4 == 0 and int.from_bytes(header[20:24], "big") % 4 == 0,
+                        f"Texture dimensions must be multiples of four: {image}")
+                require(header[25] == 6, f"Equipment texture must preserve RGBA: {image}")
     require(len(names) == len(set(names)), "Duplicate DefNames within a Def type")
     require(all(item_owners) and len(item_owners) == len(set(item_owners)), "Ambiguous implant item identity")
     require(projects and all(p.findtext("tab") == "RimCBM" for p in projects), "All implant research must use the RimCBM tab")

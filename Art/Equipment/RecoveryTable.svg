@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><g stroke="#282b29" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M64 423h65v55H64zm319 0h65v55h-65" fill="#494f47"/>
+<rect x="42" y="40" width="428" height="411" rx="19" fill="#69736b"/>
+<rect x="28" y="27" width="456" height="388" rx="24" fill="#a4aaa0"/>
+<rect x="48" y="47" width="294" height="344" rx="40" fill="#747f78"/>
+<rect x="62" y="61" width="266" height="317" rx="32" fill="#b6b8a9"/>
+<path d="M100 111l185 0m-198 49h211m-211 49h211m-211 49h211m-198 49h185" stroke="#8a9489" stroke-width="5"/>
+<rect x="119" y="67" width="151" height="56" rx="18" fill="#89998b"/>
+<path d="M166 345h70" stroke="#5b675e" stroke-width="8"/>
+<rect x="359" y="125" width="98" height="224" rx="11" fill="#606c63"/>
+<path d="M383 161v75m37-75v98" stroke="#bec1ae" stroke-width="8"/>
+<path d="M379 235l13 26m20-3l12 25" stroke="#333e38" stroke-width="11"/>
+<circle cx="405" cy="79" r="22" fill="#4e5b52"/>
+<path d="M405 80V19h-62l-36 54" fill="none" stroke="#4d584f" stroke-width="15"/>
+<ellipse cx="301" cy="84" rx="34" ry="22" fill="#d0ceae"/>
+<path d="M190 441h129" stroke="#b4b8a8" stroke-width="8"/></g></svg>

@@ -114,38 +114,4 @@ namespace RimCBM
             foreach (var item in ingredients.Where(t => t.TryGetComp<CompCBMCondition>() != null)) CBMSurgery.ReturnItem(item, __state, billDoer);
         }
     }
-    public enum CBMServiceKind { Clean, Sterilize, Repair }
-    public class CBMServiceExtension : DefModExtension { public CBMServiceKind service; }
-    public class Recipe_ServiceCBM : RecipeWorker
-    {
-        public bool Accepts(Thing thing)
-        {
-            var comp = thing.TryGetComp<CompCBMCondition>();
-            if (comp == null) return true; // ordinary repair supplies / medicine
-            if (ConditionRules.Burnt(comp.condition, comp.durability)) return false;
-            switch (recipe.GetModExtension<CBMServiceExtension>().service)
-            {
-                case CBMServiceKind.Clean: return comp.condition.HasFlag(CBMCondition.Dirty);
-                case CBMServiceKind.Sterilize: return !comp.condition.HasFlag(CBMCondition.Dirty) && comp.condition.HasFlag(CBMCondition.Unsterile);
-                default: return comp.durability < 1;
-            }
-        }
-        public override void ConsumeIngredient(Thing ingredient, RecipeDef recipe, Map map)
-        { if (ingredient.TryGetComp<CompCBMCondition>() == null) base.ConsumeIngredient(ingredient, recipe, map); }
-        public override void Notify_IterationCompleted(Pawn billDoer, List<Thing> ingredients)
-        {
-            foreach (var item in ingredients.Where(t => !t.Destroyed && t.TryGetComp<CompCBMCondition>() != null))
-            {
-                var comp = item.TryGetComp<CompCBMCondition>();
-                if (Accepts(item))
-                    switch (recipe.GetModExtension<CBMServiceExtension>().service)
-                    {
-                        case CBMServiceKind.Clean: comp.condition = (comp.condition & ~CBMCondition.Dirty) | CBMCondition.Unsterile; break;
-                        case CBMServiceKind.Sterilize: comp.condition &= ~CBMCondition.Unsterile; break;
-                        case CBMServiceKind.Repair: comp.durability = 1; comp.condition |= CBMCondition.Unsterile; break;
-                    }
-                CBMSurgery.ReturnItem(item, billDoer, billDoer);
-            }
-        }
-    }
 }

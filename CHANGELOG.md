@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Add implant recovery table, service bench and autonomous autoclave, with dedicated research and native work bills.
+- Recover actual implants from corpses; clean, repair, recycle burnt parts and sterilize with consumable pouches.
+- Preserve chamber contents and progress across saves; pause on power loss and return contents on removal.
+- Add original equipment artwork and English/Chinese localization.
+
 ## 0.1.0 — Alpha preparation
 
 - Body grids, expansion boards, saved placement actions, surgery and hot swapping.
