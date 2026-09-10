@@ -1,0 +1,1652 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_FuelGeneratorItem</defName>
+    <label>fuel generator prototype</label>
+    <description>Refillable chemical-fuel generator. Stores 20 units and produces up to 120 W at 80% conversion efficiency.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.2</Mass>
+      <MarketValue>1400</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_FuelGenerator</defName>
+    <label>fuel generator prototype</label>
+    <description>Refillable chemical-fuel generator. Stores 20 units and produces up to 120 W at 80% conversion efficiency.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>1400</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_FuelGeneratorItem</item>
+        <installationSurgery>
+          <successFactor>0.9</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.9500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <faults>
+          <li>
+            <id>shortCircuit</id>
+            <labelKey>RC_FaultDischarge</labelKey>
+            <maxDurability>0.75</maxDurability>
+            <chance>0.25</chance>
+            <intervalTicks>600~1800</intervalTicks>
+            <damageAmount>2</damageAmount>
+            <energyWd>0.5</energyWd>
+            <requiresEnergy>true</requiresEnergy>
+            <affectsBurnt>true</affectsBurnt>
+            <requiresActive>false</requiresActive>
+            <workerClass>RimCBM.CBMFaultWorker_Discharge</workerClass>
+          </li>
+        </faults>
+        <defaultMode>standard</defaultMode>
+        <modes>
+          <li>
+            <id>standard</id>
+            <labelKey>RC_ModeStandard</labelKey>
+            <generationMultiplier>1</generationMultiplier>
+          </li>
+          <li>
+            <id>economy</id>
+            <labelKey>RC_ModeEconomy</labelKey>
+            <generationMultiplier>0.5</generationMultiplier>
+            <research>
+              <li>RimCBM_EnergyControl</li>
+            </research>
+          </li>
+        </modes>
+        <fuel>
+          <capacity>20</capacity>
+          <efficiency>0.8</efficiency>
+          <refillTicks>180</refillTicks>
+          <options>
+            <li>
+              <item>Chemfuel</item>
+              <unitsPerItem>1</unitsPerItem>
+              <energyWdPerUnit>10</energyWdPerUnit>
+            </li>
+          </options>
+        </fuel>
+        <generationWatts>120</generationWatts>
+        <tags>
+          <li>EMPSensitive</li>
+        </tags>
+        <shortLabelKey>RC_Name_FuelGenerator</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_FuelGeneratorPrepare</defName>
+    <label>prepare fuel generator prototype</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_FuelGenerator</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_FuelGeneratorItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_FuelGeneratorItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_TargetRigItem</defName>
+    <label>targeting test suite</label>
+    <description>Targeted electric attack and close-range treatment. Right-click a target to use.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.8</Mass>
+      <MarketValue>2800</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_TargetRig</defName>
+    <label>targeting test suite</label>
+    <description>Targeted electric attack and close-range treatment. Right-click a target to use.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>2800</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>2</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_TargetRigItem</item>
+        <installationSurgery>
+          <successFactor>0.8</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.8500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <tags>
+          <li>EMPSensitive</li>
+        </tags>
+        <abilities>
+          <li>
+            <id>shock</id>
+            <kind>OneShot</kind>
+            <labelKey>RC_AbilityName_shock</labelKey>
+            <cooldownTicks>300</cooldownTicks>
+            <range>12</range>
+            <useWd>2</useWd>
+            <damageAmount>8</damageAmount>
+            <damageDef>Burn</damageDef>
+            <targetKinds Inherit="False">
+              <li>HostilePawn</li>
+            </targetKinds>
+          </li>
+          <li>
+            <id>treat</id>
+            <kind>OneShot</kind>
+            <labelKey>RC_AbilityName_treat</labelKey>
+            <cooldownTicks>300</cooldownTicks>
+            <range>1.5</range>
+            <useWd>1</useWd>
+            <healAmount>4</healAmount>
+            <targetKinds Inherit="False">
+              <li>Self</li>
+              <li>FriendlyPawn</li>
+            </targetKinds>
+          </li>
+        </abilities>
+        <shortLabelKey>RC_Name_TargetRig</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_TargetRigPrepare</defName>
+    <label>prepare targeting test suite</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_TargetRig</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_TargetRigItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_TargetRigItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_AbilityRigItem</defName>
+    <label>ability test suite</label>
+    <description>Four independent abilities: passive mobility, sustained assistance, a timed burst and automatic injury repair.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MarketValue>2400</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_AbilityRig</defName>
+    <label>ability test suite</label>
+    <description>Four independent abilities: passive mobility, sustained assistance, a timed burst and automatic injury repair.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>2400</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>2</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_AbilityRigItem</item>
+        <installationSurgery>
+          <successFactor>0.8</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.8500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <tags>
+          <li>EMPSensitive</li>
+        </tags>
+        <abilities>
+          <li>
+            <id>passive</id>
+            <kind>Passive</kind>
+            <labelKey>RC_AbilityName_passive</labelKey>
+            <statOffsets>
+              <MoveSpeed>0.05</MoveSpeed>
+            </statOffsets>
+          </li>
+          <li>
+            <id>assist</id>
+            <kind>Toggle</kind>
+            <labelKey>RC_AbilityName_assist</labelKey>
+            <defaultEnabled>false</defaultEnabled>
+            <idleWatts>40</idleWatts>
+            <activationWd>0.2</activationWd>
+            <statOffsets>
+              <MoveSpeed>0.2</MoveSpeed>
+            </statOffsets>
+          </li>
+          <li>
+            <id>burst</id>
+            <kind>OneShot</kind>
+            <labelKey>RC_AbilityName_burst</labelKey>
+            <useWd>2</useWd>
+            <durationTicks>180</durationTicks>
+            <cooldownTicks>600</cooldownTicks>
+            <statOffsets>
+              <MoveSpeed>0.8</MoveSpeed>
+            </statOffsets>
+          </li>
+          <li>
+            <id>repair</id>
+            <kind>Reactive</kind>
+            <labelKey>RC_AbilityName_repair</labelKey>
+            <useWd>1</useWd>
+            <cooldownTicks>300</cooldownTicks>
+            <reserveWd>5</reserveWd>
+            <trigger>DamageTaken</trigger>
+            <minimumDamage>1</minimumDamage>
+            <healAmount>3</healAmount>
+          </li>
+        </abilities>
+        <shortLabelKey>RC_Name_AbilityRig</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_AbilityRigPrepare</defName>
+    <label>prepare ability test suite</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_AbilityRig</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_AbilityRigItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_AbilityRigItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_BatteryItem</defName>
+    <label>energy storage</label>
+    <description>Stores 100 Wd in the shared implant energy pool.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>5</weight>
+        <pools>
+          <li>Utility</li>
+          <li>Combat</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Battery</defName>
+    <label>energy storage</label>
+    <description>Stores 100 Wd in the shared implant energy pool.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>600</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_BatteryItem</item>
+        <installationSurgery>
+          <successFactor>0.95</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>1</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>50</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <faults>
+          <li>
+            <id>shortCircuit</id>
+            <labelKey>RC_FaultDischarge</labelKey>
+            <maxDurability>0.75</maxDurability>
+            <chance>0.25</chance>
+            <intervalTicks>600~1800</intervalTicks>
+            <damageAmount>2</damageAmount>
+            <energyWd>0.5</energyWd>
+            <requiresEnergy>true</requiresEnergy>
+            <affectsBurnt>true</affectsBurnt>
+            <requiresActive>false</requiresActive>
+            <workerClass>RimCBM.CBMFaultWorker_Discharge</workerClass>
+          </li>
+        </faults>
+        <chargeAcceptanceWatts>200</chargeAcceptanceWatts>
+        <energyCapacityWd>100</energyCapacityWd>
+        <shortLabelKey>RC_Name_Battery</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_BatteryPrepare</defName>
+    <label>prepare energy storage</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Battery</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_BatteryItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_BatteryItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_MetabolicItem</defName>
+    <label>metabolic generator</label>
+    <description>Generates 60 W using nutrition. Stops below 20% food or when storage is full. EMP-sensitive.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.8</Mass>
+      <MarketValue>1400</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>2</weight>
+        <pools>
+          <li>Utility</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Metabolic</defName>
+    <label>metabolic generator</label>
+    <description>Generates 60 W using nutrition. Stops below 20% food or when storage is full. EMP-sensitive.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>1400</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>false</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_MetabolicItem</item>
+        <installationSurgery>
+          <successFactor>0.9</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.9500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <faults>
+          <li>
+            <id>shortCircuit</id>
+            <labelKey>RC_FaultDischarge</labelKey>
+            <maxDurability>0.75</maxDurability>
+            <chance>0.25</chance>
+            <intervalTicks>600~1800</intervalTicks>
+            <damageAmount>2</damageAmount>
+            <energyWd>0.5</energyWd>
+            <requiresEnergy>true</requiresEnergy>
+            <affectsBurnt>true</affectsBurnt>
+            <requiresActive>false</requiresActive>
+            <workerClass>RimCBM.CBMFaultWorker_Discharge</workerClass>
+          </li>
+        </faults>
+        <generationWatts>60</generationWatts>
+        <nutritionPerWd>0.004</nutritionPerWd>
+        <tags>
+          <li>EMPSensitive</li>
+        </tags>
+        <shortLabelKey>RC_Name_Metabolic</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_MetabolicPrepare</defName>
+    <label>prepare metabolic generator</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Metabolic</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_MetabolicItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_MetabolicItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_OverdriveItem</defName>
+    <label>motor overdrive</label>
+    <description>Consumes 100 W, costs 0.5 Wd to start. Adds movement speed; a 5 Wd burst lasts 10 seconds with a 20-second cooldown. EMP-sensitive.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.2</Mass>
+      <MarketValue>1800</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>2</weight>
+        <pools>
+          <li>Combat</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Overdrive</defName>
+    <label>motor overdrive</label>
+    <description>Consumes 100 W, costs 0.5 Wd to start. Adds movement speed; a 5 Wd burst lasts 10 seconds with a 20-second cooldown. EMP-sensitive.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>1800</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_OverdriveItem</item>
+        <installationSurgery>
+          <successFactor>0.85</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.9</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <idleWatts>100</idleWatts>
+        <activationWd>0.5</activationWd>
+        <useWd>5</useWd>
+        <useDurationTicks>600</useDurationTicks>
+        <useCooldownTicks>1200</useCooldownTicks>
+        <tags>
+          <li>EMPSensitive</li>
+        </tags>
+        <statOffsets>
+          <MoveSpeed>0.15</MoveSpeed>
+        </statOffsets>
+        <burstStatOffsets>
+          <MoveSpeed>0.8</MoveSpeed>
+        </burstStatOffsets>
+        <shortLabelKey>RC_Name_Overdrive</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_OverdrivePrepare</defName>
+    <label>prepare motor overdrive</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Overdrive</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_OverdriveItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_OverdriveItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_PlaceholderItem</defName>
+    <label>test placeholder</label>
+    <description>RimCBM grid prototype: 1 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.4</Mass>
+      <MarketValue>100</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Placeholder</defName>
+    <label>test placeholder</label>
+    <description>RimCBM grid prototype: 1 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>100</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_PlaceholderItem</item>
+        <installationSurgery>
+          <successFactor>1</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>1</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Placeholder</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_PlaceholderPrepare</defName>
+    <label>prepare test placeholder</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Placeholder</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_PlaceholderItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_PlaceholderItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_InterfaceItem</defName>
+    <label>interface prototype</label>
+    <description>RimCBM grid prototype: 1 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.3</Mass>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Interface</defName>
+    <label>interface prototype</label>
+    <description>RimCBM grid prototype: 1 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>250</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_InterfaceItem</item>
+        <installationSurgery>
+          <successFactor>0.95</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>1</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Interface</shortLabelKey>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_InterfacePrepare</defName>
+    <label>prepare interface prototype</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Interface</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_InterfaceItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_InterfaceItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_ControllerItem</defName>
+    <label>fixed controller prototype</label>
+    <description>RimCBM grid prototype: 2 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.8</Mass>
+      <MarketValue>800</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>0</weight>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Controller</defName>
+    <label>fixed controller prototype</label>
+    <description>RimCBM grid prototype: 2 x 2. Tests installation and layout only; no energy or combat effect yet.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>800</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>2</width>
+        <height>2</height>
+        <hotSwappable>false</hotSwappable>
+        <expansion>None</expansion>
+        <item>RimCBM_ControllerItem</item>
+        <installationSurgery>
+          <successFactor>0.8</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.8500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.3</hitChance>
+          <hitPoints>40</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Controller</shortLabelKey>
+        <exclusions>
+          <li>
+            <scope>Pawn</scope>
+            <modules>
+              <li>RimCBM_Controller</li>
+            </modules>
+          </li>
+        </exclusions>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_ControllerPrepare</defName>
+    <label>prepare fixed controller prototype</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Controller</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_ControllerItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_ControllerItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_RowItem</defName>
+    <label>row extender</label>
+    <description>RimCBM grid prototype: 1 x 2. Provides additional grid space.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.6</Mass>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>3</weight>
+        <pools>
+          <li>Utility</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Row</defName>
+    <label>row extender</label>
+    <description>RimCBM grid prototype: 1 x 2. Provides additional grid space.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>1000</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>1</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>Row</expansion>
+        <item>RimCBM_RowItem</item>
+        <installationSurgery>
+          <successFactor>0.9</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.9500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.4</hitChance>
+          <hitPoints>30</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Row</shortLabelKey>
+        <exclusions>
+          <li>
+            <scope>Part</scope>
+            <modules>
+              <li>RimCBM_Row</li>
+            </modules>
+          </li>
+        </exclusions>
+        <tags>
+          <li>Expansion</li>
+        </tags>
+        <type>Expansion</type>
+        <grantedCellTags>
+          <li>Expansion</li>
+        </grantedCellTags>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_RowPrepare</defName>
+    <label>prepare row extender</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Row</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_RowItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_RowItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_ColumnItem</defName>
+    <label>column extender</label>
+    <description>RimCBM grid prototype: 2 x 2. Provides additional grid space.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.8</Mass>
+      <MarketValue>1200</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>2</weight>
+        <pools>
+          <li>Utility</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Column</defName>
+    <label>column extender</label>
+    <description>RimCBM grid prototype: 2 x 2. Provides additional grid space.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>1200</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>2</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>Column</expansion>
+        <item>RimCBM_ColumnItem</item>
+        <installationSurgery>
+          <successFactor>0.9</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.9500000000000001</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.4</hitChance>
+          <hitPoints>30</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Column</shortLabelKey>
+        <exclusions>
+          <li>
+            <scope>Part</scope>
+            <modules>
+              <li>RimCBM_Column</li>
+            </modules>
+          </li>
+        </exclusions>
+        <tags>
+          <li>Expansion</li>
+        </tags>
+        <type>Expansion</type>
+        <grantedCellTags>
+          <li>Expansion</li>
+        </grantedCellTags>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_ColumnPrepare</defName>
+    <label>prepare column extender</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Column</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_ColumnItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_ColumnItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <ThingDef ParentName="BodyPartBase">
+    <defName>RimCBM_BayItem</defName>
+    <label>hot-swap expansion bay</label>
+    <description>RimCBM grid prototype: 2 x 2. Provides additional grid space.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>BodyPartsBionic</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1.2</Mass>
+      <MarketValue>2200</MarketValue>
+    </statBases>
+    <tradeTags Inherit="False">
+      <li>RimCBM_Implant</li>
+    </tradeTags>
+    <modExtensions>
+      <li Class="RimCBM.CBMTradeExtension">
+        <weight>1</weight>
+        <pools>
+          <li>Utility</li>
+        </pools>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="RimCBM.CompProperties_CBMCondition" />
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>RimCBM_Bay</defName>
+    <label>hot-swap expansion bay</label>
+    <description>RimCBM grid prototype: 2 x 2. Provides additional grid space.</description>
+    <hediffClass>RimCBM.Hediff_CBMModule</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <priceOffset>2200</priceOffset>
+    <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    <modExtensions>
+      <li Class="RimCBM.CBMExtension">
+        <width>2</width>
+        <height>2</height>
+        <hotSwappable>true</hotSwappable>
+        <expansion>Board</expansion>
+        <item>RimCBM_BayItem</item>
+        <installationSurgery>
+          <successFactor>0.75</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0.15</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </installationSurgery>
+        <removalSurgery>
+          <successFactor>0.8</successFactor>
+          <severeChance>0.2</severeChance>
+          <burnoutChance>0.05</burnoutChance>
+          <retainedChance>0</retainedChance>
+          <minorDamage>0.15~0.3</minorDamage>
+          <severeDamage>0.45~0.7</severeDamage>
+          <minorPatientDamage>3</minorPatientDamage>
+          <severePatientDamage>12</severePatientDamage>
+          <burnoutPatientDamage>25</burnoutPatientDamage>
+        </removalSurgery>
+        <combat>
+          <hitChance>0.4</hitChance>
+          <hitPoints>30</hitPoints>
+          <hitWeight>1</hitWeight>
+          <damageMultiplier>1</damageMultiplier>
+          <fireDamageMultiplier>1</fireDamageMultiplier>
+          <damageFactors>
+            <li>
+              <damageDef>Burn</damageDef>
+              <multiplier>1.5</multiplier>
+            </li>
+            <li>
+              <damageDef>Blunt</damageDef>
+              <multiplier>1</multiplier>
+            </li>
+            <li>
+              <damageDef>Cut</damageDef>
+              <multiplier>0.8</multiplier>
+            </li>
+          </damageFactors>
+        </combat>
+        <shortLabelKey>RC_Name_Bay</shortLabelKey>
+        <exclusions>
+          <li>
+            <scope>Part</scope>
+            <modules>
+              <li>RimCBM_Bay</li>
+            </modules>
+          </li>
+        </exclusions>
+        <tags>
+          <li>Expansion</li>
+        </tags>
+        <type>Expansion</type>
+        <grantedCellTags>
+          <li>Expansion</li>
+          <li>HotSwap</li>
+        </grantedCellTags>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>RimCBM_BayPrepare</defName>
+    <label>prepare hot-swap expansion bay</label>
+    <description>Surgically prepare the implant, then place it using the health panel.</description>
+    <jobString>Preparing implant.</jobString>
+    <workerClass>RimCBM.Recipe_PrepareCBM</workerClass>
+    <addsHediff>RimCBM_Bay</addsHediff>
+    <humanlikeOnly>true</humanlikeOnly>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RimCBM_BayItem</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RimCBM_BayItem</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RimCBM_Remove</defName>
+    <label>extract selected implant</label>
+    <description>Extract the exact module selected in the implant panel.</description>
+    <workerClass>RimCBM.Recipe_RemoveCBM</workerClass>
+    <jobString>Extracting implant.</jobString>
+    <surgeryOutcomeEffect>RimCBM_SurgeryOutcome</surgeryOutcomeEffect>
+    <recipeUsers Inherit="False" />
+    <isViolation>false</isViolation>
+  </RecipeDef>
+  <SurgeryOutcomeEffectDef ParentName="SurgeryOutcomeBase">
+    <defName>RimCBM_SurgeryOutcome</defName>
+    <outcomes Inherit="False">
+      <li Class="SurgeryOutcomeSuccess" />
+      <li Class="SurgeryOutcome_Failure">
+        <failure>true</failure>
+        <chance>1</chance>
+        <totalDamage>0</totalDamage>
+      </li>
+    </outcomes>
+  </SurgeryOutcomeEffectDef>
+</Defs>

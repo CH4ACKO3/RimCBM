@@ -1,0 +1,11 @@
+"workshopitem"
+{
+    "appid" "294100"
+    "publishedfileid" "0"
+    "contentfolder" "C:/path/to/artifacts/ci/RimCBM"
+    "previewfile" "C:/path/to/your/RimCBM-cover.png"
+    "visibility" "2"
+    "title" "RimCBM"
+    "description" "Replace with the prepared description and validate before upload."
+    "changenote" "Replace with the version's release notes."
+}

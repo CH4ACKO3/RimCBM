@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>RimCBM_Relocate</defName>
+    <driverClass>RimCBM.JobDriver_CBMRelocate</driverClass>
+    <reportString>reconfiguring implant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RimCBM_Charge</defName>
+    <driverClass>RimCBM.JobDriver_CBMCharge</driverClass>
+    <reportString>recharging implant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RimCBM_CastAbility</defName>
+    <driverClass>RimCBM.JobDriver_CBMCastAbility</driverClass>
+    <reportString>using implant ability.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+</Defs>

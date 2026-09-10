@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_LoadHead.label>头部植入负重</RimCBM_LoadHead.label>
+  <RimCBM_LoadHead.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadHead.description>
+  <RimCBM_LoadHands.label>手部植入负重</RimCBM_LoadHands.label>
+  <RimCBM_LoadHands.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadHands.description>
+  <RimCBM_LoadArms.label>手臂植入负重</RimCBM_LoadArms.label>
+  <RimCBM_LoadArms.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadArms.description>
+  <RimCBM_LoadTorso.label>躯干植入负重</RimCBM_LoadTorso.label>
+  <RimCBM_LoadTorso.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadTorso.description>
+  <RimCBM_LoadLegs.label>腿部植入负重</RimCBM_LoadLegs.label>
+  <RimCBM_LoadLegs.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadLegs.description>
+  <RimCBM_LoadFeet.label>脚部植入负重</RimCBM_LoadFeet.label>
+  <RimCBM_LoadFeet.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadFeet.description>
+  <RimCBM_LoadTotal.label>全身植入负重</RimCBM_LoadTotal.label>
+  <RimCBM_LoadTotal.description>体内植入体重量，左右同类部位合并。超过免罚额度后影响相应属性。</RimCBM_LoadTotal.description>
+</LanguageData>

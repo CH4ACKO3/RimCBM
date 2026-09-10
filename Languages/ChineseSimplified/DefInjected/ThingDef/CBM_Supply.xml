@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_ChargingStation.label>植入体充电座</RimCBM_ChargingStation.label>
+  <RimCBM_ChargingStation.description>专用电网充电接口，充电输入 500 W，待机消耗 5 W，转换效率 90%，一次供一人使用。</RimCBM_ChargingStation.description>
+</LanguageData>

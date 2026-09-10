@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_Clean.label>清洁 植入体</RimCBM_Clean.label>
+  <RimCBM_Clean.description>清洁 植入体</RimCBM_Clean.description>
+  <RimCBM_Clean.jobString>正在清洁 植入体。</RimCBM_Clean.jobString>
+  <RimCBM_Repair.label>维修 植入体</RimCBM_Repair.label>
+  <RimCBM_Repair.description>维修 植入体</RimCBM_Repair.description>
+  <RimCBM_Repair.jobString>正在维修 植入体。</RimCBM_Repair.jobString>
+  <RimCBM_Sterilize.label>灭菌 植入体</RimCBM_Sterilize.label>
+  <RimCBM_Sterilize.description>灭菌 植入体</RimCBM_Sterilize.description>
+  <RimCBM_Sterilize.jobString>正在灭菌 植入体。</RimCBM_Sterilize.jobString>
+</LanguageData>

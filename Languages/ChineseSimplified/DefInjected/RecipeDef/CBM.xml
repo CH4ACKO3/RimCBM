@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_FuelGeneratorPrepare.label>植入准备：燃料发电测试机</RimCBM_FuelGeneratorPrepare.label>
+  <RimCBM_FuelGeneratorPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_FuelGeneratorPrepare.description>
+  <RimCBM_FuelGeneratorPrepare.jobString>正在准备 植入体。</RimCBM_FuelGeneratorPrepare.jobString>
+  <RimCBM_TargetRigPrepare.label>植入准备：目标能力测试套件</RimCBM_TargetRigPrepare.label>
+  <RimCBM_TargetRigPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_TargetRigPrepare.description>
+  <RimCBM_TargetRigPrepare.jobString>正在准备 植入体。</RimCBM_TargetRigPrepare.jobString>
+  <RimCBM_AbilityRigPrepare.label>植入准备：能力测试套件</RimCBM_AbilityRigPrepare.label>
+  <RimCBM_AbilityRigPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_AbilityRigPrepare.description>
+  <RimCBM_AbilityRigPrepare.jobString>正在准备 植入体。</RimCBM_AbilityRigPrepare.jobString>
+  <RimCBM_BatteryPrepare.label>植入准备：储能单元</RimCBM_BatteryPrepare.label>
+  <RimCBM_BatteryPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_BatteryPrepare.description>
+  <RimCBM_BatteryPrepare.jobString>正在准备 植入体。</RimCBM_BatteryPrepare.jobString>
+  <RimCBM_MetabolicPrepare.label>植入准备：代谢发电机</RimCBM_MetabolicPrepare.label>
+  <RimCBM_MetabolicPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_MetabolicPrepare.description>
+  <RimCBM_MetabolicPrepare.jobString>正在准备 植入体。</RimCBM_MetabolicPrepare.jobString>
+  <RimCBM_OverdrivePrepare.label>植入准备：运动强化器</RimCBM_OverdrivePrepare.label>
+  <RimCBM_OverdrivePrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_OverdrivePrepare.description>
+  <RimCBM_OverdrivePrepare.jobString>正在准备 植入体。</RimCBM_OverdrivePrepare.jobString>
+  <RimCBM_PlaceholderPrepare.label>植入准备：测试占位块</RimCBM_PlaceholderPrepare.label>
+  <RimCBM_PlaceholderPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_PlaceholderPrepare.description>
+  <RimCBM_PlaceholderPrepare.jobString>正在准备 植入体。</RimCBM_PlaceholderPrepare.jobString>
+  <RimCBM_InterfacePrepare.label>植入准备：接口原型</RimCBM_InterfacePrepare.label>
+  <RimCBM_InterfacePrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_InterfacePrepare.description>
+  <RimCBM_InterfacePrepare.jobString>正在准备 植入体。</RimCBM_InterfacePrepare.jobString>
+  <RimCBM_ControllerPrepare.label>植入准备：固定控制器原型</RimCBM_ControllerPrepare.label>
+  <RimCBM_ControllerPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_ControllerPrepare.description>
+  <RimCBM_ControllerPrepare.jobString>正在准备 植入体。</RimCBM_ControllerPrepare.jobString>
+  <RimCBM_RowPrepare.label>植入准备：增行器</RimCBM_RowPrepare.label>
+  <RimCBM_RowPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_RowPrepare.description>
+  <RimCBM_RowPrepare.jobString>正在准备 植入体。</RimCBM_RowPrepare.jobString>
+  <RimCBM_ColumnPrepare.label>植入准备：增列器</RimCBM_ColumnPrepare.label>
+  <RimCBM_ColumnPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_ColumnPrepare.description>
+  <RimCBM_ColumnPrepare.jobString>正在准备 植入体。</RimCBM_ColumnPrepare.jobString>
+  <RimCBM_BayPrepare.label>植入准备：热插拔扩展板</RimCBM_BayPrepare.label>
+  <RimCBM_BayPrepare.description>手术将 植入体 加入此部位的待安装列表，随后在健康面板中拖入格子。</RimCBM_BayPrepare.description>
+  <RimCBM_BayPrepare.jobString>正在准备 植入体。</RimCBM_BayPrepare.jobString>
+  <RimCBM_Remove.label>取出指定 植入体</RimCBM_Remove.label>
+  <RimCBM_Remove.description>取出 植入体 面板中选定的具体植入物。</RimCBM_Remove.description>
+  <RimCBM_Remove.jobString>正在取出 植入体。</RimCBM_Remove.jobString>
+</LanguageData>

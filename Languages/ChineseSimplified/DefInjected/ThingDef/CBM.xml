@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_FuelGeneratorItem.label>燃料发电测试机</RimCBM_FuelGeneratorItem.label>
+  <RimCBM_FuelGeneratorItem.description>可补充化合燃料的发电测试机。储存 20 单位燃料，最高输出 120 W，转换效率 80%。</RimCBM_FuelGeneratorItem.description>
+  <RimCBM_TargetRigItem.label>目标能力测试套件</RimCBM_TargetRigItem.label>
+  <RimCBM_TargetRigItem.description>提供对敌电击与近距离治疗能力，通过右键目标使用。</RimCBM_TargetRigItem.description>
+  <RimCBM_AbilityRigItem.label>能力测试套件</RimCBM_AbilityRigItem.label>
+  <RimCBM_AbilityRigItem.description>包含独立的被动移动辅助、持续动力、单次爆发和受伤自动修复，用于测试四类能力。</RimCBM_AbilityRigItem.description>
+  <RimCBM_BatteryItem.label>储能单元</RimCBM_BatteryItem.label>
+  <RimCBM_BatteryItem.description>为角色共享能源池提供 100 Wd 储能容量。</RimCBM_BatteryItem.description>
+  <RimCBM_MetabolicItem.label>代谢发电机</RimCBM_MetabolicItem.label>
+  <RimCBM_MetabolicItem.description>消耗营养产生 60 W 电力，饱食度低于 20% 或储能已满时停止。受 EMP 影响。</RimCBM_MetabolicItem.description>
+  <RimCBM_OverdriveItem.label>运动强化器</RimCBM_OverdriveItem.label>
+  <RimCBM_OverdriveItem.description>持续耗能 100 W，启动消耗 0.5 Wd。提高移动速度；单次强化消耗 5 Wd，持续 10 秒、冷却 20 秒。受 EMP 影响。</RimCBM_OverdriveItem.description>
+  <RimCBM_PlaceholderItem.label>测试占位块</RimCBM_PlaceholderItem.label>
+  <RimCBM_PlaceholderItem.description>RimCBM 槽位原型：1×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_PlaceholderItem.description>
+  <RimCBM_InterfaceItem.label>接口原型</RimCBM_InterfaceItem.label>
+  <RimCBM_InterfaceItem.description>RimCBM 槽位原型：1×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_InterfaceItem.description>
+  <RimCBM_ControllerItem.label>固定控制器原型</RimCBM_ControllerItem.label>
+  <RimCBM_ControllerItem.description>RimCBM 槽位原型：2×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_ControllerItem.description>
+  <RimCBM_RowItem.label>增行器</RimCBM_RowItem.label>
+  <RimCBM_RowItem.description>RimCBM 槽位原型：1×2。提供额外的槽位空间。</RimCBM_RowItem.description>
+  <RimCBM_ColumnItem.label>增列器</RimCBM_ColumnItem.label>
+  <RimCBM_ColumnItem.description>RimCBM 槽位原型：2×2。提供额外的槽位空间。</RimCBM_ColumnItem.description>
+  <RimCBM_BayItem.label>热插拔扩展板</RimCBM_BayItem.label>
+  <RimCBM_BayItem.description>RimCBM 槽位原型：2×2。提供额外的槽位空间。</RimCBM_BayItem.description>
+</LanguageData>

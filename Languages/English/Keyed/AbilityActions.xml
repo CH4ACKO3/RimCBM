@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_Error_ViolenceDisabled>Incapable of violence</RC_Error_ViolenceDisabled>
+  <RC_Effect_Custom>Custom effect</RC_Effect_Custom>
+  <RC_Trigger_Custom>Custom event</RC_Trigger_Custom>
+  <RC_Info_WorldRules>Outside maps: {0}.</RC_Info_WorldRules>
+  <RC_Info_CastRules>Warmup: {0} seconds. On-map casts require an action; cancellation costs no energy. Outside maps: {1}.</RC_Info_CastRules>
+  <RC_WorldSelf>self support only</RC_WorldSelf>
+  <RC_WorldMapOnly>map required</RC_WorldMapOnly>
+  <RC_RuntimePaused>Inactive host: operation paused</RC_RuntimePaused>
+  <RC_Effect_Damage>Damage</RC_Effect_Damage>
+  <RC_Effect_Heal>Heal injuries</RC_Effect_Heal>
+  <RC_Effect_Tend>Tend</RC_Effect_Tend>
+  <RC_Effect_AddHediff>Add condition</RC_Effect_AddHediff>
+  <RC_Effect_ReduceHediff>Reduce condition</RC_Effect_ReduceHediff>
+  <RC_Effect_Projectile>Projectile</RC_Effect_Projectile>
+</LanguageData>

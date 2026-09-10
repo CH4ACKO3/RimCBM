@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RimCBM</name>
+  <author>CH4AcKO3</author>
+  <packageId>ch4acko3.rimcbm</packageId>
+  <modVersion>0.1.0</modVersion>
+  <supportedVersions><li>1.6</li></supportedVersions>
+  <modDependencies><li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li></modDependencies>
+  <loadAfter><li>brrainz.harmony</li></loadAfter>
+  <url>https://github.com/CH4ACKO3/RimCBM</url>
+  <description>Alpha implant framework for RimWorld 1.6, inspired by Cataclysm: Dark Days Ahead. Plan body grids, shared W/Wd power, surgery, abilities, maintenance and fuel/charging logistics. Includes prototype modules, a health-panel extension and native context controls. Requires Harmony. Supports English and 简体中文. Content progression and balance are in development; CE and third-party integrations are not certified.</description>
+</ModMetaData>

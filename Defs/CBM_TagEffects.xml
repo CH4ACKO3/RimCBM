@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <RimCBM.CBMTagEffectDef>
+    <defName>RimCBM_EMPSensitive</defName>
+    <tag>EMPSensitive</tag>
+    <empSensitive>true</empSensitive>
+    <empDurationTicks>600</empDurationTicks>
+  </RimCBM.CBMTagEffectDef>
+</Defs>

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='AimingDelayFactor']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='AimingDelayFactor']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='AimingDelayFactor']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='MeleeCooldownFactor']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeCooldownFactor']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeCooldownFactor']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='MeleeDodgeChance']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeDodgeChance']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeDodgeChance']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='MeleeHitChance']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeHitChance']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MeleeHitChance']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='MoveSpeed']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MoveSpeed']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='MoveSpeed']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName='WorkSpeedGlobal']/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='WorkSpeedGlobal']/parts</xpath>
+      <value>
+        <li Class="RimCBM.StatPart_CBMBurden" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName='WorkSpeedGlobal']</xpath>
+      <value>
+        <parts>
+          <li Class="RimCBM.StatPart_CBMBurden" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

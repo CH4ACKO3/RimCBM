@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>RimCBM_Refill</defName>
+    <driverClass>RimCBM.JobDriver_CBMRefill</driverClass>
+    <reportString>refilling implant fuel.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RimCBM_ChargeAtStation</defName>
+    <driverClass>RimCBM.JobDriver_CBMChargeAtStation</driverClass>
+    <reportString>charging implants.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+  </JobDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RimCBM_ChargingStation</defName>
+    <label>implant charging station</label>
+    <description>Dedicated grid interface for implant charging. Draws up to 505 W, with 90% conversion efficiency and a 5 Wd internal buffer. One user at a time.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <designationCategory>Misc</designationCategory>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/Power/Battery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>15</Mass>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>505</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="RimCBM.CompProperties_CBMCharger" />
+    </comps>
+  </ThingDef>
+</Defs>

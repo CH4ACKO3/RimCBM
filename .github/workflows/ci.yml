@@ -1,0 +1,66 @@
+name: Build and release
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: rimcbm-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: '8.0.x'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Build, validate, test and package
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+        run: ./Tools/CI/Build.ps1 -Tag $env:RELEASE_TAG
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rimcbm-package
+          path: artifacts/ci/
+          if-no-files-found: error
+          retention-days: 30
+  release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: windows-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: rimcbm-package
+          path: package
+      - name: Publish checked GitHub prerelease
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $manifest = Get-Content package/manifest.json -Raw | ConvertFrom-Json
+          if ($manifest.tag -cne $env:RELEASE_TAG) { throw 'Artifact tag mismatch.' }
+          $zip = Join-Path package $manifest.archive
+          if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant() -cne $manifest.archiveSha256) { throw 'Archive hash mismatch.' }
+          gh release view $env:RELEASE_TAG *> $null
+          if ($LASTEXITCODE -eq 0) { throw 'Release already exists; refusing to replace published files.' }
+          gh release create $env:RELEASE_TAG $zip package/manifest.json package/Description.en.bbcode package/Description.zh-CN.bbcode --verify-tag --prerelease --title "RimCBM $($manifest.version) Alpha" --notes-file package/release-notes.md
+          if ($LASTEXITCODE) { throw 'GitHub release creation failed.' }

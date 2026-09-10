@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>RimCBM.Probe</AssemblyName>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <Import Project="../../Build/RimWorld.References.props" />
+  <ItemGroup>
+    <ProjectReference Include="../../Source/RimCBM/RimCBM.csproj" />
+  </ItemGroup>
+</Project>

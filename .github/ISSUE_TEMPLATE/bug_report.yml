@@ -1,0 +1,26 @@
+name: Bug report / 问题反馈
+description: Report a reproducible problem in RimCBM.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: RimWorld and RimCBM version / 版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps / 重现步骤
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior / 预期与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: mods
+    attributes:
+      label: Mod list and relevant log / 模组列表与日志
+      description: Remove private paths or personal data before uploading logs.

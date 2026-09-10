@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>RimCBM_LayoutReconfiguration</defName>
+    <label>implant layout reconfiguration</label>
+    <description>Reposition deployed implants within the same grid board. Does not allow extraction or return to the surgery-only pending list.</description>
+    <baseCost>2200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>0</researchViewX>
+    <researchViewY>2</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <tab>RimCBM</tab>
+  </ResearchProjectDef>
+  <ResearchTabDef>
+    <defName>RimCBM</defName>
+    <label>Implants</label>
+  </ResearchTabDef>
+  <ResearchProjectDef>
+    <defName>RimCBM_Integration</defName>
+    <label>implant integration</label>
+    <description>Research framework placeholder. Specific implant unlocks will be assigned as the content progresses.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+    <tab>RimCBM</tab>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>RimCBM_EnergyControl</defName>
+    <label>implant energy control</label>
+    <description>Research framework placeholder. Specific implant unlocks will be assigned as the content progresses.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+    <tab>RimCBM</tab>
+    <prerequisites>
+      <li>RimCBM_Integration</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>RimCBM_AdvancedControl</defName>
+    <label>implant mode control</label>
+    <description>Research framework placeholder. Specific implant unlocks will be assigned as the content progresses.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>2</researchViewY>
+    <tab>RimCBM</tab>
+    <prerequisites>
+      <li>RimCBM_Integration</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>RimCBM_HostAdaptation</defName>
+    <label>implant host adaptation</label>
+    <description>Research framework placeholder. Specific implant unlocks will be assigned as the content progresses.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>2</researchViewX>
+    <researchViewY>2</researchViewY>
+    <tab>RimCBM</tab>
+    <prerequisites>
+      <li>RimCBM_AdvancedControl</li>
+    </prerequisites>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <RimCBM.CBMVisualStyleDef>
+    <defName>RimCBM_ExpansionBlue</defName>
+    <type>Expansion</type>
+    <tag>Expansion</tag>
+    <priority>10</priority>
+    <cellColor>#6060AC</cellColor>
+    <moduleColor>#6060AC</moduleColor>
+    <cellIndicatorColor>None</cellIndicatorColor>
+  </RimCBM.CBMVisualStyleDef>
+  <RimCBM.CBMVisualStyleDef>
+    <defName>RimCBM_HotSwapGreen</defName>
+    <tag>HotSwap</tag>
+    <priority>100</priority>
+    <cellColor>#73997C</cellColor>
+    <cellIndicatorColor>None</cellIndicatorColor>
+  </RimCBM.CBMVisualStyleDef>
+</Defs>

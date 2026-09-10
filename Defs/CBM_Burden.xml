@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <StatCategoryDef>
+    <defName>RimCBM_Burden</defName>
+    <label>implant load</label>
+    <displayOrder>1050</displayOrder>
+  </StatCategoryDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileHead</defName>
+    <group>Head</group>
+    <freeKg>0.5</freeKg>
+    <bodyParts>
+      <li>Head</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MeleeDodgeChance</stat>
+        <strength>1</strength>
+        <increases>false</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadHead</defName>
+    <label>head implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Head</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileHands</defName>
+    <group>Hands</group>
+    <freeKg>0.5</freeKg>
+    <bodyParts>
+      <li>Hand</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>WorkSpeedGlobal</stat>
+        <strength>1</strength>
+        <increases>false</increases>
+      </li>
+      <li>
+        <stat>AimingDelayFactor</stat>
+        <strength>1</strength>
+        <increases>true</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadHands</defName>
+    <label>hands implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Hands</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileArms</defName>
+    <group>Arms</group>
+    <freeKg>2</freeKg>
+    <bodyParts>
+      <li>Arm</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MeleeCooldownFactor</stat>
+        <strength>1</strength>
+        <increases>true</increases>
+      </li>
+      <li>
+        <stat>AimingDelayFactor</stat>
+        <strength>0.5</strength>
+        <increases>true</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadArms</defName>
+    <label>arms implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Arms</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileTorso</defName>
+    <group>Torso</group>
+    <freeKg>4</freeKg>
+    <bodyParts>
+      <li>Torso</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MeleeDodgeChance</stat>
+        <strength>1</strength>
+        <increases>false</increases>
+      </li>
+      <li>
+        <stat>MeleeHitChance</stat>
+        <strength>0.75</strength>
+        <increases>false</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadTorso</defName>
+    <label>torso implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Torso</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileLegs</defName>
+    <group>Legs</group>
+    <freeKg>2</freeKg>
+    <bodyParts>
+      <li>Leg</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MoveSpeed</stat>
+        <strength>1</strength>
+        <increases>false</increases>
+      </li>
+      <li>
+        <stat>MeleeDodgeChance</stat>
+        <strength>0.5</strength>
+        <increases>false</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadLegs</defName>
+    <label>legs implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Legs</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileFeet</defName>
+    <group>Feet</group>
+    <freeKg>0.5</freeKg>
+    <bodyParts>
+      <li>Foot</li>
+    </bodyParts>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MoveSpeed</stat>
+        <strength>1</strength>
+        <increases>false</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadFeet</defName>
+    <label>feet implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Feet</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+  <RimCBM.CBMLoadProfileDef>
+    <defName>RimCBM_LoadProfileTotal</defName>
+    <group>Total</group>
+    <freeKg>8</freeKg>
+    <penaltyCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1, 0.05)</li>
+        <li>(3, 0.18)</li>
+        <li>(6, 0.45)</li>
+        <li>(12, 1)</li>
+      </points>
+    </penaltyCurve>
+    <effects>
+      <li>
+        <stat>MoveSpeed</stat>
+        <strength>0.5</strength>
+        <increases>false</increases>
+      </li>
+      <li>
+        <stat>WorkSpeedGlobal</stat>
+        <strength>0.3</strength>
+        <increases>false</increases>
+      </li>
+    </effects>
+  </RimCBM.CBMLoadProfileDef>
+  <RimCBM.CBMLoadStatDef>
+    <defName>RimCBM_LoadTotal</defName>
+    <label>total implant load</label>
+    <description>Implant mass in this region. Left and right are combined. Excess mass applies encumbrance effects.</description>
+    <group>Total</group>
+    <workerClass>RimCBM.StatWorker_CBMLoad</workerClass>
+    <category>RimCBM_Burden</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <showOnPawns>true</showOnPawns>
+  </RimCBM.CBMLoadStatDef>
+</Defs>

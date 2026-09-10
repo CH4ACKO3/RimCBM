@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_CBMResearch>研究门槛</RC_CBMResearch>
+  <RC_Dependencies>植入体依赖</RC_Dependencies>
+  <RC_Compatibility>宿主兼容条件</RC_Compatibility>
+  <RC_CompatibilityBlocked>依赖或宿主条件不满足</RC_CompatibilityBlocked>
+  <RC_InstallOnly>仅安装时</RC_InstallOnly>
+  <RC_InstallAndRun>安装与运行时</RC_InstallAndRun>
+  <RC_HostRule>全部满足：{0}；任一满足：{1}；禁止：{2}；体型：{3}–{4}</RC_HostRule>
+  <RC_ModeStandard>标准输出</RC_ModeStandard>
+  <RC_ModeEconomy>低功率输出</RC_ModeEconomy>
+  <RC_Mode>运行模式</RC_Mode>
+  <RC_ModeInfo>能力：{0}
+发电 ×{1}；耗能 ×{2}；效果 ×{3}
+运行互斥组：{4}</RC_ModeInfo>
+  <RC_Error_CBMResearchRequired>所需植入体研究尚未完成</RC_Error_CBMResearchRequired>
+  <RC_Error_HostIncompatible>宿主兼容条件不满足</RC_Error_HostIncompatible>
+  <RC_Error_MissingDependency>需要已部署且未烧毁的前置植入体</RC_Error_MissingDependency>
+  <RC_Error_DependencyInUse>仍有其他植入体依赖此组件</RC_Error_DependencyInUse>
+  <RC_Error_UnknownMode>未知运行模式</RC_Error_UnknownMode>
+  <RC_Error_ModeUnavailable>当前模式或研究状态不允许使用该能力</RC_Error_ModeUnavailable>
+  <RC_FireWear>持续燃烧损伤</RC_FireWear>
+  <RC_Remnant>故障残留</RC_Remnant>
+  <RC_PendingRemnants>待装/残留</RC_PendingRemnants>
+  <RC_Surgery_Retained>受损植入体残留体内</RC_Surgery_Retained>
+  <RC_FaultDischarge>间歇放电</RC_FaultDischarge>
+  <RC_Info_RetainedRisk>另有 {0} 的失败结果会将重度损坏的植入体留在体内；它无法运行，也不能作为待安装件拖放，需要手术取出。</RC_Info_RetainedRisk>
+  <RC_Info_Fault>耐久 ≤ {0} 时：每 {1}–{2} 秒尝试一次，概率 {3}。伤害 {4}、耗能 {5} Wd；要求能量 {6}，要求开关开启 {7}，烧毁后仍生效 {8}。取出后停止。</RC_Info_Fault>
+  <RC_Info_FireWear>身体着火时：每秒损失 {0}% 耐久 × 火势（0.25–2）。损坏和烧毁植入体保留体内，需手术或满足条件的热拔出；部位本身丢失另行处理。</RC_Info_FireWear>
+  <RC_Info_Combat>受击与损坏</RC_Info_Combat>
+  <RC_Info_CombatText>选中此植入体后的命中概率：{0}。耐久强度：{1}。伤害倍率：{2}。
+实际穿过护甲的部位伤害才可能命中同部位植入体，每次结算的部位伤害至多直接命中一个；候选权重＝占格面积 × hitWeight（{3}）。
+耐久损失＝实际伤害 × 类型倍率 × 伤害倍率 ÷ 耐久强度。EMP 仍使用独立停机规则。</RC_Info_CombatText>
+  <RC_Damage_Damaged>受损时</RC_Damage_Damaged>
+  <RC_Damage_Burnout>首次烧毁时</RC_Damage_Burnout>
+  <RC_Damage_Ignite>起火</RC_Damage_Ignite>
+  <RC_Damage_Effect>特殊后果</RC_Damage_Effect>
+  <RC_Info_DamageEffect>触发：{0}；概率 {1}；要求开关开启：{2}。受损事件共享冷却：{3} 秒；首次烧毁不受冷却阻止。具体效果可限制损坏来源。</RC_Info_DamageEffect>
+  <RC_LoadBodyScale>基础 Mass {0} kg × BodySize {1}；承重倍率 ×{2}（基准 {3} kg）。免罚额度与曲线同步缩放，装备和植入体不扩大额度。</RC_LoadBodyScale>
+  <RC_Load_Head>头部</RC_Load_Head>
+  <RC_Load_Hands>手部</RC_Load_Hands>
+  <RC_Load_Arms>手臂</RC_Load_Arms>
+  <RC_Load_Torso>躯干</RC_Load_Torso>
+  <RC_Load_Legs>腿部</RC_Load_Legs>
+  <RC_Load_Feet>脚部</RC_Load_Feet>
+  <RC_Load_Total>全身</RC_Load_Total>
+  <RC_LoadPenalty>植入体累赘</RC_LoadPenalty>
+  <RC_LoadRow>{0}：{1} kg（免罚额度 {2} kg）</RC_LoadRow>
+  <RC_LoadHelp>左右合并共用额度。只统计体内植入体，包括待安装和烧毁者。超额重量按曲线产生惩罚，不改变格子容量和原版背包负重。</RC_LoadHelp>
+  <RC_LoadShort>植入负重 {0} kg</RC_LoadShort>
+  <RC_Info_ImplantMass>手术待安装和已部署的植入体均计入身体重量，停机或烧毁不会减重。影响运输装载和尸体重量；原版商队携带负重另行计算。</RC_Info_ImplantMass>
+  <RC_Info_BasePrice>基础市场价值</RC_Info_BasePrice>
+  <RC_Info_BasePriceHelp>植入体实物的基础市场价值，同时作为植入后角色价值增量。实际买卖价格仍受原版议价、商人差价等修正。</RC_Info_BasePriceHelp>
+  <RC_Error_DirectChargingDisabled>尚不支持直接从电池充电。</RC_Error_DirectChargingDisabled>
+  <RC_PriorityHint>供能优先级：数字越大，能源不足时越先尝试分配。不改变耗能或效果强度。能力优先级与所属植入体优先级相加；手动单次能力立即检查并消耗能量。</RC_PriorityHint>
+  <RC_Info_Cleanliness>清洁状态</RC_Info_Cleanliness>
+  <RC_Info_Sterility>灭菌状态</RC_Info_Sterility>
+  <RC_Info_Clean>清洁</RC_Info_Clean>
+  <RC_Info_Dirty>肮脏</RC_Info_Dirty>
+  <RC_Info_Sterile>已灭菌</RC_Info_Sterile>
+  <RC_Info_Unsterile>未灭菌</RC_Info_Unsterile>
+  <RC_Info_HygieneHelp>清洁与灭菌分别记录。清洁去除污物，但仍为未灭菌；灭菌要求先清洁。维修会破坏无菌状态。安装必须同时满足清洁、已灭菌。目前尚未模拟无菌包装。</RC_Info_HygieneHelp>
+  <RC_Info_InstallRisk>安装失败后果</RC_Info_InstallRisk>
+  <RC_Info_RemoveRisk>取出失败后果</RC_Info_RemoveRisk>
+  <RC_Expansion_None>无</RC_Expansion_None>
+  <RC_Expansion_Row>行</RC_Expansion_Row>
+  <RC_Expansion_Column>列</RC_Expansion_Column>
+  <RC_Expansion_Board>独立槽板</RC_Expansion_Board>
+  <RC_Info_TagEffect>耗能倍率 {0}；效果倍率 {1}。上面的功能数值为基础值。</RC_Info_TagEffect>
+  <RC_Target_Self>自身</RC_Target_Self>
+  <RC_Target_Pawn>角色</RC_Target_Pawn>
+  <RC_Target_FriendlyPawn>友方角色</RC_Target_FriendlyPawn>
+  <RC_Target_HostilePawn>敌对角色</RC_Target_HostilePawn>
+  <RC_Target_Thing>物品</RC_Target_Thing>
+  <RC_Ability_Passive>被动</RC_Ability_Passive>
+  <RC_Ability_Toggle>切换</RC_Ability_Toggle>
+  <RC_Ability_OneShot>单次</RC_Ability_OneShot>
+  <RC_Ability_Reactive>反应式</RC_Ability_Reactive>
+  <RC_Scope_Part>部位互斥</RC_Scope_Part>
+  <RC_Scope_Pawn>全局互斥</RC_Scope_Pawn>
+  <RC_Info_Reactive>阈值 {0}；最低触发伤害 {1}；保留能量 {2} Wd</RC_Info_Reactive>
+  <RC_Info_Cooldown>剩余冷却：{0} 秒</RC_Info_Cooldown>
+  <RC_Info_Restrictions>必须全部满足：{0}
+至少满足一项：{1}
+禁止标签：{2}</RC_Info_Restrictions>
+  <RC_Info_EMP>EMP 会使此植入体暂时停机。</RC_Info_EMP>
+  <RC_Implants>植入体</RC_Implants>
+  <RC_Surgery_Minor>轻度损坏</RC_Surgery_Minor>
+  <RC_Surgery_Severe>重度损坏</RC_Surgery_Severe>
+  <RC_Surgery_Burnout>烧毁</RC_Surgery_Burnout>
+  <RC_SurgeryFailureMessage>{0} 的 {1} 手术失败：{2}。</RC_SurgeryFailureMessage>
+  <RC_Info_Condition>当前状态</RC_Info_Condition>
+  <RC_Info_Layout>安装布局</RC_Info_Layout>
+  <RC_Info_Power>能源</RC_Info_Power>
+  <RC_Info_Install>安装成功率上限</RC_Info_Install>
+  <RC_Info_Remove>取出成功率上限</RC_Info_Remove>
+  <RC_Info_Risk>失败后果</RC_Info_Risk>
+  <RC_Info_Tags>标签与限制</RC_Info_Tags>
+  <RC_Info_ConditionHelp>损坏会降低效果和手术成功率。烧毁后无法启动，普通维修无法恢复。肮脏或未灭菌的物品必须处理后才能手术安装。</RC_Info_ConditionHelp>
+  <RC_Info_LayoutText>占用：{0} × {1}
+允许旋转：{2}
+支持热插拔：{3}
+扩容：{4}</RC_Info_LayoutText>
+  <RC_Info_PowerText>储能：{0} Wd
+发电：{1} W
+持续耗能：{2} W
+启动耗能：{3} Wd
+单次耗能：{4} Wd</RC_Info_PowerText>
+  <RC_Info_ChanceText>这是上限，不是固定成功率。实际成功率＝原版手术质量（医生、药品、床位/环境、灵感，上限 98%）× 植入体系数 {0} × 状态系数 {1}。当前耐久：{2}。</RC_Info_ChanceText>
+  <RC_Info_RiskText>以下概率均以手术失败为前提：轻度 {0}、重度 {1}、烧毁 {2}。
+耐久损失：轻度 {3}、重度 {4}、烧毁 100%。
+患者伤害预算依次为 {5} / {6} / {7}；伤害部位可能导致永久伤残或死亡。
+安装失败的非残留分支退回受污染的物品；取出失败保留受损植入体，扩容失效按槽位损失规则处理。</RC_Info_RiskText>
+  <RC_Info_AbilityText>持续 {0} W；启动 {1} Wd；单次 {2} Wd
+持续 {3} 秒；冷却 {4} 秒
+治疗量 {5}；伤害 {6}
+目标：{7}；距离 {8}</RC_Info_AbilityText>
+  <RC_Info_Yes>是</RC_Info_Yes>
+  <RC_Info_No>否</RC_Info_No>
+  <RC_Name_Battery>储能</RC_Name_Battery>
+  <RC_Name_Metabolic>代谢发电</RC_Name_Metabolic>
+  <RC_Name_Overdrive>运动强化</RC_Name_Overdrive>
+  <RC_On>运行</RC_On>
+  <RC_Off>关闭</RC_Off>
+  <RC_EMP>EMP 停机</RC_EMP>
+  <RC_NotPowered>等待供能</RC_NotPowered>
+  <RC_TurnOn>开启</RC_TurnOn>
+  <RC_TurnOff>关闭</RC_TurnOff>
+  <RC_Use>激活</RC_Use>
+  <RC_Activation>启动</RC_Activation>
+  <RC_Priority>优先级</RC_Priority>
+  <RC_ChargeHint>点击选择殖民地电池进行充电。</RC_ChargeHint>
+  <RC_Charge>充电</RC_Charge>
+  <RC_NoBattery>没有可用的殖民地电池。</RC_NoBattery>
+  <RC_CancelSurgery>取消取出手术</RC_CancelSurgery>
+  <RC_Error_PawnExclusion>与此角色已有或排队植入的 植入体 互斥。</RC_Error_PawnExclusion>
+  <RC_Error_PartExclusion>与此部位已有或排队植入的 植入体 互斥。</RC_Error_PartExclusion>
+  <RC_Error_PawnLimit>此角色已达到该 植入体 的数量上限。</RC_Error_PawnLimit>
+  <RC_Error_PartLimit>此部位已达到该 植入体 的数量上限。</RC_Error_PartLimit>
+  <RC_Carried>随身 植入体</RC_Carried>
+  <RC_HotInsertShort>热插入</RC_HotInsertShort>
+  <RC_PanelToggle>开启或关闭此角色的 植入体 面板。</RC_PanelToggle>
+  <RC_Name_Placeholder>测试块</RC_Name_Placeholder>
+  <RC_Name_Interface>接口</RC_Name_Interface>
+  <RC_Name_Controller>控制器</RC_Name_Controller>
+  <RC_Name_Row>增行器</RC_Name_Row>
+  <RC_Name_Column>增列器</RC_Name_Column>
+  <RC_Name_Bay>扩展板</RC_Name_Bay>
+  <RC_PendingShort>待安装</RC_PendingShort>
+  <RC_UnplugShort>拔出</RC_UnplugShort>
+  <RC_SurgeryShort>手术</RC_SurgeryShort>
+  <RC_Pending>待安装 植入体</RC_Pending>
+  <RC_Deployed>已部署</RC_Deployed>
+  <RC_ShowHealth>健康状态</RC_ShowHealth>
+  <RC_ShowCBM>植入体 槽位</RC_ShowCBM>
+  <RC_NoCompatibleParts>没有兼容的身体槽位板。</RC_NoCompatibleParts>
+  <RC_MainBoard>主板</RC_MainBoard>
+  <RC_ExtensionBoard>扩展板</RC_ExtensionBoard>
+  <RC_ResearchComplete>布局重构已研究 · 可在同板内重排</RC_ResearchComplete>
+  <RC_ResearchLocked>布局已锁定 · 需研究植入体布局重构</RC_ResearchLocked>
+  <RC_GridLegend>H：热插拔格 · 其余为固定连接格</RC_GridLegend>
+  <RC_CellTags>格子标签</RC_CellTags>
+  <RC_HotExtract>热拔出到随身库存</RC_HotExtract>
+  <RC_QueueSurgery>安排取出手术</RC_QueueSurgery>
+  <RC_ChooseHint>拖动或选中后点击放置；R 旋转，Esc 取消。右击空格接入随身 植入体。</RC_ChooseHint>
+  <RC_OnlySurgeryIn>仅手术加入，部署后不能退回</RC_OnlySurgeryIn>
+  <RC_PendingEmpty>手术准备完成的 植入体 会出现在这里。</RC_PendingEmpty>
+  <RC_HotCell>热插拔格：植入体 本身也必须支持热插拔。</RC_HotCell>
+  <RC_FixedCell>固定连接格：取出需要手术。</RC_FixedCell>
+  <RC_PlaceHint>松开鼠标或点击放置；R 旋转。</RC_PlaceHint>
+  <RC_NoCarriedCBM>此角色随身库存中没有 植入体。</RC_NoCarriedCBM>
+  <RC_SurgeryQueued>已安排指定 植入体 的取出手术。</RC_SurgeryQueued>
+  <RC_CancelMove>取消移动</RC_CancelMove>
+  <RC_MoveTarget>移动目标（已预留）</RC_MoveTarget>
+  <RC_LossRecovered>槽位丢失后回收到 {0}。</RC_LossRecovered>
+  <RC_LossLost>{0} 随支撑槽位丢失，未能回收。</RC_LossLost>
+  <RC_State_Dirty>肮脏</RC_State_Dirty>
+  <RC_State_Unsterile>未灭菌</RC_State_Unsterile>
+  <RC_State_Damaged>损坏</RC_State_Damaged>
+  <RC_State_BurntOut>烧毁</RC_State_BurntOut>
+  <RC_State_Intact>完好</RC_State_Intact>
+  <RC_Error_NotPowered>此 植入体 尚未运行。</RC_Error_NotPowered>
+  <RC_Error_NotEnoughEnergy>储能不足。</RC_Error_NotEnoughEnergy>
+  <RC_Error_Cooldown>此 植入体 正在冷却。</RC_Error_Cooldown>
+  <RC_Error_BurntOut>此 植入体 已烧毁，不能安装或移动。</RC_Error_BurntOut>
+  <RC_Error_Dirty>此 植入体 肮脏，清洁后才能安装。</RC_Error_Dirty>
+  <RC_Error_Unsterile>此 植入体 未灭菌，灭菌后才能安装。</RC_Error_Unsterile>
+  <RC_Error_Reserved>这些格子或组件已被移动意图预留。</RC_Error_Reserved>
+  <RC_Error_SlotTagsMismatch>占用的每一格都必须满足此 植入体 的标签限制。</RC_Error_SlotTagsMismatch>
+  <RC_Error_DuplicateInstance>植入物实例重复。</RC_Error_DuplicateInstance>
+  <RC_Error_UnknownModule>未知 植入体 定义。</RC_Error_UnknownModule>
+  <RC_Error_MissingBodyPart>宿主身体部位已缺失。</RC_Error_MissingBodyPart>
+  <RC_Error_RotationForbidden>此 植入体 不允许旋转。</RC_Error_RotationForbidden>
+  <RC_Error_MissingBoard>所依赖的槽位板不可用。</RC_Error_MissingBoard>
+  <RC_Error_OutsideGrid>模块形状超出可用格子。</RC_Error_OutsideGrid>
+  <RC_Error_Occupied>目标格子被其他 植入体 占用。</RC_Error_Occupied>
+  <RC_Error_ExpansionNeedsBaseCells>扩容器必须完全放在主板原始格子中。</RC_Error_ExpansionNeedsBaseCells>
+  <RC_Error_ExpansionLimit>每块主板同类扩容器只能部署一个。</RC_Error_ExpansionLimit>
+  <RC_Error_HotDestinationRequired>植入体 和所有目标格都必须支持热插拔。</RC_Error_HotDestinationRequired>
+  <RC_Error_WrongBodyPart>此 植入体 已绑定其他身体区域。</RC_Error_WrongBodyPart>
+  <RC_Error_CrossBoardRequiresHotSwap>研究只允许同板移动；跨板需要两端满足热插拔条件。</RC_Error_CrossBoardRequiresHotSwap>
+  <RC_Error_ResearchRequired>移动固定连接模块前需研究植入体布局重构。</RC_Error_ResearchRequired>
+  <RC_Error_ExpansionInUse>此扩容器仍被使用，先处理依赖它的模块。</RC_Error_ExpansionInUse>
+  <RC_Error_SurgeryRequired>需要手术取出：此 植入体 或部分占用格不支持热插拔。</RC_Error_SurgeryRequired>
+  <RC_Error_ReadOnly>当前角色仅可查看。</RC_Error_ReadOnly>
+  <RC_Error_OperatorUnavailable>调整 植入体 需要角色在地图中清醒、未倒地、非精神状态且具备操作能力。</RC_Error_OperatorUnavailable>
+  <RC_Error_InventoryFull>无法存放拆出的物品。</RC_Error_InventoryFull>
+  <RC_Error_ItemUnavailable>随身 植入体 实物已不可用。</RC_Error_ItemUnavailable>
+  <RC_Error_AlreadyQueued>此模块已有取出手术。</RC_Error_AlreadyQueued>
+  <RC_Name_TargetRig>目标套件</RC_Name_TargetRig>
+  <RC_AbilityName_shock>电击</RC_AbilityName_shock>
+  <RC_AbilityName_treat>现场治疗</RC_AbilityName_treat>
+  <RC_CBMSelectTarget>选择目标</RC_CBMSelectTarget>
+  <RC_Error_InvalidCBMTarget>目标不适用于此 植入体。</RC_Error_InvalidCBMTarget>
+  <RC_Error_CBMOutOfRange>目标超出作用距离。</RC_Error_CBMOutOfRange>
+  <RC_Error_CBMNoSight>视线被阻挡。</RC_Error_CBMNoSight>
+  <RC_Error_CBMStorageFull>植入体 储能已满。</RC_Error_CBMStorageFull>
+  <RC_Error_CBMUnreachable>无法到达或预留此目标。</RC_Error_CBMUnreachable>
+  <RC_Name_AbilityRig>能力套件</RC_Name_AbilityRig>
+  <RC_CBMControlDesc>控制 {0} 已安装的 植入体。</RC_CBMControlDesc>
+  <RC_NoCBMControls>没有可手动控制的 植入体 能力。</RC_NoCBMControls>
+  <RC_Abilities>能力</RC_Abilities>
+  <RC_AbilityName_passive>运动校准</RC_AbilityName_passive>
+  <RC_AbilityName_assist>动力辅助</RC_AbilityName_assist>
+  <RC_AbilityName_burst>速度爆发</RC_AbilityName_burst>
+  <RC_AbilityName_repair>应急修复</RC_AbilityName_repair>
+  <RC_Armed>自动待命</RC_Armed>
+  <RC_Ready>可使用</RC_Ready>
+  <RC_Reserve>保留电量</RC_Reserve>
+  <RC_Threshold>触发阈值</RC_Threshold>
+  <RC_AbilityCooldown>冷却：{0}</RC_AbilityCooldown>
+  <RC_AbilityTiming>持续：{0} · 冷却：{1}</RC_AbilityTiming>
+  <RC_Trigger_DamageTaken>触发：受到伤害</RC_Trigger_DamageTaken>
+  <RC_Trigger_HealthBelow>触发：生命值低于阈值</RC_Trigger_HealthBelow>
+  <RC_Trigger_BloodLossAbove>触发：失血达到阈值</RC_Trigger_BloodLossAbove>
+  <RC_Error_AbilityMode>此类能力不支持该操作。</RC_Error_AbilityMode>
+  <RC_Error_NoAbilityEffect>当前没有有效作用对象，不消耗电量。</RC_Error_NoAbilityEffect>
+  <RC_CarriedFuel>使用随身燃料</RC_CarriedFuel>
+  <RC_Refill>补充燃料</RC_Refill>
+  <RC_FuelEmpty>空</RC_FuelEmpty>
+  <RC_ChargeStation>为植入体充电</RC_ChargeStation>
+  <RC_ChargePolicy>自动充电</RC_ChargePolicy>
+  <RC_AutoFuelOff>关闭自动补给</RC_AutoFuelOff>
+  <RC_AutoFuel>自动补给</RC_AutoFuel>
+  <RC_AnyFuel>允许任意兼容燃料</RC_AnyFuel>
+  <RC_FuelPrefer>自动补给燃料选择</RC_FuelPrefer>
+  <RC_Error_FuelMismatch>燃料不兼容或罐内仍有其他燃料</RC_Error_FuelMismatch>
+  <RC_Error_FuelFull>已满或不足以容纳一件补给物</RC_Error_FuelFull>
+  <RC_Error_ChargerUnavailable>没有可用的充电接口或充电座未供电</RC_Error_ChargerUnavailable>
+  <RC_ChargeHelp>需要专用电网充电座。走近并停留连接，速率由充电座与正常植入体接口共同限制。不能直接从原版电池充电。</RC_ChargeHelp>
+  <RC_FuelHelp>每件植入体拥有独立燃料罐。补给耗时，按整件消耗，不溢出、不混装。燃料重量与状态随取出物品保留。自动补给默认关闭，可在植入体控制菜单配置。</RC_FuelHelp>
+</LanguageData>

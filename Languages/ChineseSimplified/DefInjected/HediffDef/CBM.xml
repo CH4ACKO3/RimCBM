@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_FuelGenerator.label>燃料发电测试机</RimCBM_FuelGenerator.label>
+  <RimCBM_FuelGenerator.description>可补充化合燃料的发电测试机。储存 20 单位燃料，最高输出 120 W，转换效率 80%。</RimCBM_FuelGenerator.description>
+  <RimCBM_TargetRig.label>目标能力测试套件</RimCBM_TargetRig.label>
+  <RimCBM_TargetRig.description>提供对敌电击与近距离治疗能力，通过右键目标使用。</RimCBM_TargetRig.description>
+  <RimCBM_AbilityRig.label>能力测试套件</RimCBM_AbilityRig.label>
+  <RimCBM_AbilityRig.description>包含独立的被动移动辅助、持续动力、单次爆发和受伤自动修复，用于测试四类能力。</RimCBM_AbilityRig.description>
+  <RimCBM_Battery.label>储能单元</RimCBM_Battery.label>
+  <RimCBM_Battery.description>为角色共享能源池提供 100 Wd 储能容量。</RimCBM_Battery.description>
+  <RimCBM_Metabolic.label>代谢发电机</RimCBM_Metabolic.label>
+  <RimCBM_Metabolic.description>消耗营养产生 60 W 电力，饱食度低于 20% 或储能已满时停止。受 EMP 影响。</RimCBM_Metabolic.description>
+  <RimCBM_Overdrive.label>运动强化器</RimCBM_Overdrive.label>
+  <RimCBM_Overdrive.description>持续耗能 100 W，启动消耗 0.5 Wd。提高移动速度；单次强化消耗 5 Wd，持续 10 秒、冷却 20 秒。受 EMP 影响。</RimCBM_Overdrive.description>
+  <RimCBM_Placeholder.label>测试占位块</RimCBM_Placeholder.label>
+  <RimCBM_Placeholder.description>RimCBM 槽位原型：1×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_Placeholder.description>
+  <RimCBM_Interface.label>接口原型</RimCBM_Interface.label>
+  <RimCBM_Interface.description>RimCBM 槽位原型：1×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_Interface.description>
+  <RimCBM_Controller.label>固定控制器原型</RimCBM_Controller.label>
+  <RimCBM_Controller.description>RimCBM 槽位原型：2×2。用于验证安装与布局，尚无能源或战斗效果。</RimCBM_Controller.description>
+  <RimCBM_Row.label>增行器</RimCBM_Row.label>
+  <RimCBM_Row.description>RimCBM 槽位原型：1×2。提供额外的槽位空间。</RimCBM_Row.description>
+  <RimCBM_Column.label>增列器</RimCBM_Column.label>
+  <RimCBM_Column.description>RimCBM 槽位原型：2×2。提供额外的槽位空间。</RimCBM_Column.description>
+  <RimCBM_Bay.label>热插拔扩展板</RimCBM_Bay.label>
+  <RimCBM_Bay.description>RimCBM 槽位原型：2×2。提供额外的槽位空间。</RimCBM_Bay.description>
+</LanguageData>

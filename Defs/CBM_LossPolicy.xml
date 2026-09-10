@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <RimCBM.CBMLossPolicyDef>
+    <defName>RimCBM_DefaultLossPolicy</defName>
+    <removedDamageChance>0.35</removedDamageChance>
+    <destroyedDamageChance>0.85</destroyedDamageChance>
+    <removedDamage>0.25</removedDamage>
+    <destroyedDamage>0.65</destroyedDamage>
+    <removedRecoveryChance>0.95</removedRecoveryChance>
+    <destroyedRecoveryChance>0.35</destroyedRecoveryChance>
+    <removedBurnChance>0.02</removedBurnChance>
+    <destroyedBurnChance>0.7</destroyedBurnChance>
+  </RimCBM.CBMLossPolicyDef>
+</Defs>

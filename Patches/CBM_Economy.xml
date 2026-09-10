@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName='Mass']/parts</xpath>
+    <value>
+      <li Class="RimCBM.StatPart_CBMInstalledMass" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Caravan_Outlander_BulkGoods']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.15</stockChance>
+        <kinds>1~1</kinds>
+        <countRange>1~1</countRange>
+        <pool>Utility</pool>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Caravan_Outlander_CombatSupplier']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.25</stockChance>
+        <kinds>1~1</kinds>
+        <countRange>1~1</countRange>
+        <pool>Combat</pool>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Caravan_Outlander_Exotic']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.65</stockChance>
+        <kinds>1~2</kinds>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Caravan_Outlander_PirateMerchant']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.35</stockChance>
+        <kinds>1~2</kinds>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Orbital_BulkGoods']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.3</stockChance>
+        <kinds>1~2</kinds>
+        <countRange>1~1</countRange>
+        <pool>Utility</pool>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Orbital_CombatSupplier']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.5</stockChance>
+        <kinds>1~2</kinds>
+        <countRange>1~1</countRange>
+        <pool>Combat</pool>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Orbital_Exotic']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.9</stockChance>
+        <kinds>2~4</kinds>
+        <countRange>1~2</countRange>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Orbital_PirateMerchant']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.5</stockChance>
+        <kinds>1~2</kinds>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName='Base_Outlander_Standard']/stockGenerators</xpath>
+    <value>
+      <li Class="RimCBM.StockGenerator_CBM">
+        <stockChance>0.8</stockChance>
+        <kinds>2~3</kinds>
+        <countRange>1~1</countRange>
+      </li>
+    </value>
+  </Operation>
+</Patch>

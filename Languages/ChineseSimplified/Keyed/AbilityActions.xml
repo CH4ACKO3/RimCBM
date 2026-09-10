@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_Error_ViolenceDisabled>无法执行暴力行为</RC_Error_ViolenceDisabled>
+  <RC_Effect_Custom>自定义效果</RC_Effect_Custom>
+  <RC_Trigger_Custom>自定义事件</RC_Trigger_Custom>
+  <RC_Info_WorldRules>地图外：{0}。</RC_Info_WorldRules>
+  <RC_Info_CastRules>准备时间：{0} 秒。地图内需要完成释放动作，取消不扣能。地图外：{1}。</RC_Info_CastRules>
+  <RC_WorldSelf>仅自身支持效果</RC_WorldSelf>
+  <RC_WorldMapOnly>必须在地图内</RC_WorldMapOnly>
+  <RC_RuntimePaused>宿主未活动，运行暂停</RC_RuntimePaused>
+  <RC_Effect_Damage>伤害</RC_Effect_Damage>
+  <RC_Effect_Heal>治疗伤口</RC_Effect_Heal>
+  <RC_Effect_Tend>包扎</RC_Effect_Tend>
+  <RC_Effect_AddHediff>增加状态</RC_Effect_AddHediff>
+  <RC_Effect_ReduceHediff>减轻状态</RC_Effect_ReduceHediff>
+  <RC_Effect_Projectile>投射物</RC_Effect_Projectile>
+</LanguageData>

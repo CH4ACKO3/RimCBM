@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RC_CBMResearch>Required research</RC_CBMResearch>
+  <RC_Dependencies>Implant dependencies</RC_Dependencies>
+  <RC_Compatibility>Host compatibility</RC_Compatibility>
+  <RC_CompatibilityBlocked>Dependency or host incompatible</RC_CompatibilityBlocked>
+  <RC_InstallOnly>Installation only</RC_InstallOnly>
+  <RC_InstallAndRun>Installation and operation</RC_InstallAndRun>
+  <RC_HostRule>All: {0}; any: {1}; none: {2}; body size: {3}–{4}</RC_HostRule>
+  <RC_ModeStandard>Standard output</RC_ModeStandard>
+  <RC_ModeEconomy>Low output</RC_ModeEconomy>
+  <RC_Mode>Mode</RC_Mode>
+  <RC_ModeInfo>Abilities: {0}
+Generation ×{1}; consumption ×{2}; effect ×{3}
+Exclusive group: {4}</RC_ModeInfo>
+  <RC_Error_CBMResearchRequired>Required implant research is unfinished</RC_Error_CBMResearchRequired>
+  <RC_Error_HostIncompatible>Host compatibility requirements are not met</RC_Error_HostIncompatible>
+  <RC_Error_MissingDependency>Requires an installed, intact prerequisite implant</RC_Error_MissingDependency>
+  <RC_Error_DependencyInUse>Another implant still depends on this implant</RC_Error_DependencyInUse>
+  <RC_Error_UnknownMode>Unknown implant mode</RC_Error_UnknownMode>
+  <RC_Error_ModeUnavailable>Ability unavailable in the current mode or research state</RC_Error_ModeUnavailable>
+  <RC_FireWear>Fire damage over time</RC_FireWear>
+  <RC_Remnant>Retained fault</RC_Remnant>
+  <RC_PendingRemnants>Pending / remnants</RC_PendingRemnants>
+  <RC_Surgery_Retained>damaged implant left inside</RC_Surgery_Retained>
+  <RC_FaultDischarge>Intermittent discharge</RC_FaultDischarge>
+  <RC_Info_RetainedRisk>Additional failure branch: {0} leaves a severely damaged implant inside the body. It cannot operate or be placed from the pending list; extraction surgery is required.</RC_Info_RetainedRisk>
+  <RC_Info_Fault>At durability ≤ {0}: attempt every {1}–{2}s, chance {3}. Damage {4}, energy {5} Wd; needs energy {6}, needs switch on {7}, affects burnout {8}. Removal stops this fault.</RC_Info_Fault>
+  <RC_Info_FireWear>While attached fire burns: loses {0}% durability per second × fire intensity (0.25–2). Damaged and burnt implants stay inside until extracted or hot-unplugged; physical limb loss is handled separately.</RC_Info_FireWear>
+  <RC_Info_Combat>Implant damage</RC_Info_Combat>
+  <RC_Info_CombatText>Chance after this implant is selected: {0}. Structural durability: {1}. Damage multiplier: {2}.
+Only actual post-armor injury can hit implants on that body region; at most one direct implant hit per resolved injury. Candidate weight = footprint × hitWeight ({3}).
+Durability loss = actual injury × type factor × damage multiplier / structural durability. EMP keeps its separate disruption rules.</RC_Info_CombatText>
+  <RC_Damage_Damaged>On damage</RC_Damage_Damaged>
+  <RC_Damage_Burnout>On burnout</RC_Damage_Burnout>
+  <RC_Damage_Ignite>Ignition</RC_Damage_Ignite>
+  <RC_Damage_Effect>Special consequence</RC_Damage_Effect>
+  <RC_Info_DamageEffect>Trigger: {0}; chance {1}; requires switch on: {2}. Shared damage-event cooldown: {3}s. A new burnout transition bypasses this cooldown. Conditions may be limited to specific damage causes.</RC_Info_DamageEffect>
+  <RC_LoadBodyScale>Base Mass {0} kg × BodySize {1}; burden scale ×{2} (reference {3} kg). Allowances and curves scale together; gear and implants do not increase the allowance.</RC_LoadBodyScale>
+  <RC_Load_Head>Head</RC_Load_Head>
+  <RC_Load_Hands>Hands</RC_Load_Hands>
+  <RC_Load_Arms>Arms</RC_Load_Arms>
+  <RC_Load_Torso>Torso</RC_Load_Torso>
+  <RC_Load_Legs>Legs</RC_Load_Legs>
+  <RC_Load_Feet>Feet</RC_Load_Feet>
+  <RC_Load_Total>Total</RC_Load_Total>
+  <RC_LoadPenalty>Implant encumbrance</RC_LoadPenalty>
+  <RC_LoadRow>{0}: {1} kg (no-penalty allowance {2} kg)</RC_LoadRow>
+  <RC_LoadHelp>Left and right share one allowance. Only implants inside the body count, including prepared or burnt units. Excess mass follows configurable curves; this does not change grid capacity or vanilla inventory load.</RC_LoadHelp>
+  <RC_LoadShort>Implant load {0} kg</RC_LoadShort>
+  <RC_Info_ImplantMass>Added to body mass while surgically prepared or installed, including disabled or burnt-out units. Counts for transport loading and corpse mass. Vanilla caravan carrying capacity is separate.</RC_Info_ImplantMass>
+  <RC_Info_BasePrice>Base market value</RC_Info_BasePrice>
+  <RC_Info_BasePriceHelp>Base value of the physical implant, also used as the installed pawn value offset. Actual trade prices use vanilla negotiation, trader margins and other modifiers.</RC_Info_BasePriceHelp>
+  <RC_Error_DirectChargingDisabled>Direct battery charging is unavailable.</RC_Error_DirectChargingDisabled>
+  <RC_PriorityHint>Power allocation priority: higher numbers are served first when energy is scarce. Does not change power cost or strength. Ability priority is added to its implant priority. Manual one-shot activation checks energy immediately.</RC_PriorityHint>
+  <RC_Info_Cleanliness>Cleanliness</RC_Info_Cleanliness>
+  <RC_Info_Sterility>Sterility</RC_Info_Sterility>
+  <RC_Info_Clean>Clean</RC_Info_Clean>
+  <RC_Info_Dirty>Dirty</RC_Info_Dirty>
+  <RC_Info_Sterile>Sterile</RC_Info_Sterile>
+  <RC_Info_Unsterile>Unsterile</RC_Info_Unsterile>
+  <RC_Info_HygieneHelp>Cleanliness and sterility are separate states. Cleaning removes dirt but leaves the implant unsterile. Sterilization requires a clean implant. Repair breaks sterility. Installation requires both clean and sterile. Sterile packaging is not simulated yet.</RC_Info_HygieneHelp>
+  <RC_Info_InstallRisk>Installation failure</RC_Info_InstallRisk>
+  <RC_Info_RemoveRisk>Extraction failure</RC_Info_RemoveRisk>
+  <RC_Expansion_None>None</RC_Expansion_None>
+  <RC_Expansion_Row>Rows</RC_Expansion_Row>
+  <RC_Expansion_Column>Columns</RC_Expansion_Column>
+  <RC_Expansion_Board>Separate bay</RC_Expansion_Board>
+  <RC_Info_TagEffect>Consumption multiplier {0}; effect multiplier {1}. Values above are base values.</RC_Info_TagEffect>
+  <RC_Target_Self>Self</RC_Target_Self>
+  <RC_Target_Pawn>Pawn</RC_Target_Pawn>
+  <RC_Target_FriendlyPawn>Friendly pawn</RC_Target_FriendlyPawn>
+  <RC_Target_HostilePawn>Hostile pawn</RC_Target_HostilePawn>
+  <RC_Target_Thing>Thing</RC_Target_Thing>
+  <RC_Ability_Passive>Passive</RC_Ability_Passive>
+  <RC_Ability_Toggle>Toggle</RC_Ability_Toggle>
+  <RC_Ability_OneShot>One-shot</RC_Ability_OneShot>
+  <RC_Ability_Reactive>Reactive</RC_Ability_Reactive>
+  <RC_Scope_Part>Body part exclusion</RC_Scope_Part>
+  <RC_Scope_Pawn>Global exclusion</RC_Scope_Pawn>
+  <RC_Info_Reactive>Threshold {0}; minimum damage {1}; energy reserve {2} Wd</RC_Info_Reactive>
+  <RC_Info_Cooldown>Remaining cooldown: {0}s</RC_Info_Cooldown>
+  <RC_Info_Restrictions>Requires all: {0}
+Requires any: {1}
+Forbidden: {2}</RC_Info_Restrictions>
+  <RC_Info_EMP>EMP temporarily disables this implant.</RC_Info_EMP>
+  <RC_Implants>Implants</RC_Implants>
+  <RC_Surgery_Minor>minor damage</RC_Surgery_Minor>
+  <RC_Surgery_Severe>severe damage</RC_Surgery_Severe>
+  <RC_Surgery_Burnout>burnout</RC_Surgery_Burnout>
+  <RC_SurgeryFailureMessage>{0}: surgery on {1} failed ({2}).</RC_SurgeryFailureMessage>
+  <RC_Info_Condition>Condition</RC_Info_Condition>
+  <RC_Info_Layout>Installation layout</RC_Info_Layout>
+  <RC_Info_Power>Energy</RC_Info_Power>
+  <RC_Info_Install>Installation success ceiling</RC_Info_Install>
+  <RC_Info_Remove>Extraction success ceiling</RC_Info_Remove>
+  <RC_Info_Risk>Failure consequences</RC_Info_Risk>
+  <RC_Info_Tags>Tags and restrictions</RC_Info_Tags>
+  <RC_Info_ConditionHelp>Damage reduces effects and surgical success. Burnout prevents activation and ordinary repair. Dirty or unsterilized items must be serviced before installation.</RC_Info_ConditionHelp>
+  <RC_Info_LayoutText>Footprint: {0} × {1}
+Rotatable: {2}
+Hot-plug capable: {3}
+Expansion: {4}</RC_Info_LayoutText>
+  <RC_Info_PowerText>Storage: {0} Wd
+Generation: {1} W
+Upkeep: {2} W
+Startup: {3} Wd
+Activation: {4} Wd</RC_Info_PowerText>
+  <RC_Info_ChanceText>This is a ceiling, not a guaranteed rate. Actual chance = vanilla surgery quality (doctor, medicine, bed/environment, inspiration; capped at 98%) × implant factor {0} × condition factor {1}. Current durability: {2}.</RC_Info_ChanceText>
+  <RC_Info_RiskText>Conditional on failure: minor {0}, severe {1}, burnout {2}.
+Durability loss: minor {3}, severe {4}, burnout 100%.
+Patient injury budget: {5} / {6} / {7}; injury location can cause permanent harm or death.
+Installation failures without retention return the contaminated item. Failed extraction leaves the damaged implant installed; loss of expansion support follows slot-loss rules.</RC_Info_RiskText>
+  <RC_Info_AbilityText>Upkeep {0} W; startup {1} Wd; use {2} Wd
+Duration {3}s; cooldown {4}s
+Healing {5}; damage {6}
+Targets: {7}; range {8}</RC_Info_AbilityText>
+  <RC_Info_Yes>Yes</RC_Info_Yes>
+  <RC_Info_No>No</RC_Info_No>
+  <RC_Name_Battery>Storage</RC_Name_Battery>
+  <RC_Name_Metabolic>Metabolic</RC_Name_Metabolic>
+  <RC_Name_Overdrive>Overdrive</RC_Name_Overdrive>
+  <RC_On>running</RC_On>
+  <RC_Off>off</RC_Off>
+  <RC_EMP>EMP disabled</RC_EMP>
+  <RC_NotPowered>waiting for power</RC_NotPowered>
+  <RC_TurnOn>On</RC_TurnOn>
+  <RC_TurnOff>Off</RC_TurnOff>
+  <RC_Use>Activate</RC_Use>
+  <RC_Activation>Startup</RC_Activation>
+  <RC_Priority>Priority</RC_Priority>
+  <RC_ChargeHint>Click to charge from a colony battery.</RC_ChargeHint>
+  <RC_Charge>Recharge</RC_Charge>
+  <RC_NoBattery>No charged colony battery.</RC_NoBattery>
+  <RC_CancelSurgery>Cancel extraction surgery</RC_CancelSurgery>
+  <RC_Error_PawnExclusion>Conflicts with another implant or scheduled implant on this pawn.</RC_Error_PawnExclusion>
+  <RC_Error_PartExclusion>Conflicts with another implant or scheduled implant on this body part.</RC_Error_PartExclusion>
+  <RC_Error_PawnLimit>This pawn has reached this implant's quantity limit.</RC_Error_PawnLimit>
+  <RC_Error_PartLimit>This body part has reached this implant's quantity limit.</RC_Error_PartLimit>
+  <RC_Carried>Carried</RC_Carried>
+  <RC_HotInsertShort>Hot-plug</RC_HotInsertShort>
+  <RC_PanelToggle>Show or hide this pawn's implant panel.</RC_PanelToggle>
+  <RC_Name_Placeholder>Test implant</RC_Name_Placeholder>
+  <RC_Name_Interface>Interface</RC_Name_Interface>
+  <RC_Name_Controller>Controller</RC_Name_Controller>
+  <RC_Name_Row>Row extender</RC_Name_Row>
+  <RC_Name_Column>Column extender</RC_Name_Column>
+  <RC_Name_Bay>Expansion bay</RC_Name_Bay>
+  <RC_PendingShort>Pending</RC_PendingShort>
+  <RC_UnplugShort>Unplug</RC_UnplugShort>
+  <RC_SurgeryShort>Surgery</RC_SurgeryShort>
+  <RC_Pending>Prepared implants</RC_Pending>
+  <RC_Deployed>deployed</RC_Deployed>
+  <RC_ShowHealth>Health</RC_ShowHealth>
+  <RC_ShowCBM>implant grids</RC_ShowCBM>
+  <RC_NoCompatibleParts>No compatible body grid.</RC_NoCompatibleParts>
+  <RC_MainBoard>Main</RC_MainBoard>
+  <RC_ExtensionBoard>Expansion</RC_ExtensionBoard>
+  <RC_ResearchComplete>Layout research complete · same-board moves unlocked</RC_ResearchComplete>
+  <RC_ResearchLocked>Layout locked · research implant layout reconfiguration</RC_ResearchLocked>
+  <RC_GridLegend>H: hot-swap socket · other cells: fixed</RC_GridLegend>
+  <RC_CellTags>Cell tags</RC_CellTags>
+  <RC_HotExtract>Hot-extract to inventory</RC_HotExtract>
+  <RC_QueueSurgery>Schedule extraction</RC_QueueSurgery>
+  <RC_ChooseHint>Drag or select then place. R rotates; Esc cancels. Right-click an empty cell to insert a carried implant.</RC_ChooseHint>
+  <RC_OnlySurgeryIn>surgery adds; placement removes</RC_OnlySurgeryIn>
+  <RC_PendingEmpty>Surgery-prepared implants appear here.</RC_PendingEmpty>
+  <RC_HotCell>Hot-swap cell: the implant must also support hot swapping.</RC_HotCell>
+  <RC_FixedCell>Fixed connection: surgery required for extraction.</RC_FixedCell>
+  <RC_PlaceHint>Release or click to place. R rotates.</RC_PlaceHint>
+  <RC_NoCarriedCBM>No implant in this pawn's inventory.</RC_NoCarriedCBM>
+  <RC_SurgeryQueued>implant extraction surgery scheduled.</RC_SurgeryQueued>
+  <RC_CancelMove>Cancel relocation</RC_CancelMove>
+  <RC_MoveTarget>Reserved relocation target</RC_MoveTarget>
+  <RC_LossRecovered>Recovered {0} after loss of its supporting slots.</RC_LossRecovered>
+  <RC_LossLost>{0} was lost when its supporting slots disappeared.</RC_LossLost>
+  <RC_State_Dirty>dirty</RC_State_Dirty>
+  <RC_State_Unsterile>unsterile</RC_State_Unsterile>
+  <RC_State_Damaged>damaged</RC_State_Damaged>
+  <RC_State_BurntOut>burnt out</RC_State_BurntOut>
+  <RC_State_Intact>intact</RC_State_Intact>
+  <RC_Error_NotPowered>This implant is not operational.</RC_Error_NotPowered>
+  <RC_Error_NotEnoughEnergy>Not enough stored energy.</RC_Error_NotEnoughEnergy>
+  <RC_Error_Cooldown>This implant is cooling down.</RC_Error_Cooldown>
+  <RC_Error_BurntOut>This implant is burnt out and cannot be installed or relocated.</RC_Error_BurntOut>
+  <RC_Error_Dirty>Clean this implant before installation.</RC_Error_Dirty>
+  <RC_Error_Unsterile>Sterilize this implant before installation.</RC_Error_Unsterile>
+  <RC_Error_Reserved>These cells or this module are reserved by a relocation.</RC_Error_Reserved>
+  <RC_Error_SlotTagsMismatch>Every occupied cell must meet this implant's tag requirements.</RC_Error_SlotTagsMismatch>
+  <RC_Error_DuplicateInstance>Duplicate module instance.</RC_Error_DuplicateInstance>
+  <RC_Error_UnknownModule>Unknown implant definition.</RC_Error_UnknownModule>
+  <RC_Error_MissingBodyPart>Host body part is missing.</RC_Error_MissingBodyPart>
+  <RC_Error_RotationForbidden>This implant cannot rotate.</RC_Error_RotationForbidden>
+  <RC_Error_MissingBoard>The supporting board is unavailable.</RC_Error_MissingBoard>
+  <RC_Error_OutsideGrid>Footprint extends outside available cells.</RC_Error_OutsideGrid>
+  <RC_Error_Occupied>Another implant occupies these cells.</RC_Error_Occupied>
+  <RC_Error_ExpansionNeedsBaseCells>Expanders must fit entirely in original main-board cells.</RC_Error_ExpansionNeedsBaseCells>
+  <RC_Error_ExpansionLimit>Only one expander of each type per main board.</RC_Error_ExpansionLimit>
+  <RC_Error_HotDestinationRequired>Both the implant and every target cell must support hot swapping.</RC_Error_HotDestinationRequired>
+  <RC_Error_WrongBodyPart>This implant is prepared for a different body region.</RC_Error_WrongBodyPart>
+  <RC_Error_CrossBoardRequiresHotSwap>Research permits same-board moves only; cross-board movement requires both hot-swap endpoints.</RC_Error_CrossBoardRequiresHotSwap>
+  <RC_Error_ResearchRequired>Research layout reconfiguration before moving fixed connections.</RC_Error_ResearchRequired>
+  <RC_Error_ExpansionInUse>Remove dependent modules before extracting this expander.</RC_Error_ExpansionInUse>
+  <RC_Error_SurgeryRequired>Extraction requires surgery; this implant or some occupied cells are not hot-swappable.</RC_Error_SurgeryRequired>
+  <RC_Error_ReadOnly>This pawn cannot be edited.</RC_Error_ReadOnly>
+  <RC_Error_OperatorUnavailable>implant adjustment requires an awake pawn on the map capable of manipulation and not in a mental state.</RC_Error_OperatorUnavailable>
+  <RC_Error_InventoryFull>Could not store the extracted item.</RC_Error_InventoryFull>
+  <RC_Error_ItemUnavailable>The actual carried implant is unavailable.</RC_Error_ItemUnavailable>
+  <RC_Error_AlreadyQueued>Extraction for this module is already queued.</RC_Error_AlreadyQueued>
+  <RC_Name_TargetRig>Target suite</RC_Name_TargetRig>
+  <RC_AbilityName_shock>Electric discharge</RC_AbilityName_shock>
+  <RC_AbilityName_treat>Field treatment</RC_AbilityName_treat>
+  <RC_CBMSelectTarget>Select target</RC_CBMSelectTarget>
+  <RC_Error_InvalidCBMTarget>Invalid implant target.</RC_Error_InvalidCBMTarget>
+  <RC_Error_CBMOutOfRange>Target is out of range.</RC_Error_CBMOutOfRange>
+  <RC_Error_CBMNoSight>Line of sight is blocked.</RC_Error_CBMNoSight>
+  <RC_Error_CBMStorageFull>implant storage is full.</RC_Error_CBMStorageFull>
+  <RC_Error_CBMUnreachable>Cannot reach or reserve this target.</RC_Error_CBMUnreachable>
+  <RC_Name_AbilityRig>Ability suite</RC_Name_AbilityRig>
+  <RC_CBMControlDesc>Control installed implants on {0}.</RC_CBMControlDesc>
+  <RC_NoCBMControls>No manually controllable implant abilities.</RC_NoCBMControls>
+  <RC_Abilities>Abilities</RC_Abilities>
+  <RC_AbilityName_passive>Mobility calibration</RC_AbilityName_passive>
+  <RC_AbilityName_assist>Motor assistance</RC_AbilityName_assist>
+  <RC_AbilityName_burst>Speed burst</RC_AbilityName_burst>
+  <RC_AbilityName_repair>Emergency repair</RC_AbilityName_repair>
+  <RC_Armed>Armed</RC_Armed>
+  <RC_Ready>Ready</RC_Ready>
+  <RC_Reserve>Reserve</RC_Reserve>
+  <RC_Threshold>Threshold</RC_Threshold>
+  <RC_AbilityCooldown>Cooldown: {0}</RC_AbilityCooldown>
+  <RC_AbilityTiming>Duration: {0} · cooldown: {1}</RC_AbilityTiming>
+  <RC_Trigger_DamageTaken>Trigger: damage taken</RC_Trigger_DamageTaken>
+  <RC_Trigger_HealthBelow>Trigger: health below threshold</RC_Trigger_HealthBelow>
+  <RC_Trigger_BloodLossAbove>Trigger: blood loss reaches threshold</RC_Trigger_BloodLossAbove>
+  <RC_Error_AbilityMode>This ability does not support that operation.</RC_Error_AbilityMode>
+  <RC_Error_NoAbilityEffect>No valid effect target; no energy spent.</RC_Error_NoAbilityEffect>
+  <RC_CarriedFuel>Use carried fuel</RC_CarriedFuel>
+  <RC_Refill>Refill fuel</RC_Refill>
+  <RC_FuelEmpty>Empty</RC_FuelEmpty>
+  <RC_ChargeStation>Charge implants</RC_ChargeStation>
+  <RC_ChargePolicy>Automatic charging</RC_ChargePolicy>
+  <RC_AutoFuelOff>Disable automatic refilling</RC_AutoFuelOff>
+  <RC_AutoFuel>Automatic refilling</RC_AutoFuel>
+  <RC_AnyFuel>Allow any compatible fuel</RC_AnyFuel>
+  <RC_FuelPrefer>Automatic fuel selection</RC_FuelPrefer>
+  <RC_Error_FuelMismatch>Incompatible fuel or tank contains another fuel</RC_Error_FuelMismatch>
+  <RC_Error_FuelFull>Full or insufficient space for one item</RC_Error_FuelFull>
+  <RC_Error_ChargerUnavailable>No active charging interface or powered charger</RC_Error_ChargerUnavailable>
+  <RC_ChargeHelp>Requires a dedicated powered charging station. Approach and remain connected; rate is limited by the station and functional implant interfaces. Native batteries are not charging stations.</RC_ChargeHelp>
+  <RC_FuelHelp>Each implant has its own tank. Refilling takes time and consumes whole items without overfilling or mixing fuel. Fuel weight and state survive extraction. Automatic refill is off by default and configured in the implant control menu.</RC_FuelHelp>
+</LanguageData>

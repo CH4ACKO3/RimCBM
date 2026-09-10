@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_ChargingStation.label>implant charging station</RimCBM_ChargingStation.label>
+  <RimCBM_ChargingStation.description>Dedicated powered charging station; 500 W charging input, 5 W idle draw, 90% efficiency, one user at a time.</RimCBM_ChargingStation.description>
+</LanguageData>

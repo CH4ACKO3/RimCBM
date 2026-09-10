@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <RimCBM_LayoutReconfiguration.label>植入体布局重构</RimCBM_LayoutReconfiguration.label>
+  <RimCBM_LayoutReconfiguration.description>允许在同一块槽位板内重新排列已部署 植入体。不会解锁拆卸，也不能退回仅由手术加入的待安装列表。</RimCBM_LayoutReconfiguration.description>
+  <RimCBM_Integration.label>植入体整合</RimCBM_Integration.label>
+  <RimCBM_Integration.description>研究框架占位。后续随正式植入体内容分配安装、能力与模式解锁；当前不限制已有基础功能。</RimCBM_Integration.description>
+  <RimCBM_EnergyControl.label>植入体能源控制</RimCBM_EnergyControl.label>
+  <RimCBM_EnergyControl.description>研究框架占位。后续随正式植入体内容分配安装、能力与模式解锁；当前不限制已有基础功能。</RimCBM_EnergyControl.description>
+  <RimCBM_AdvancedControl.label>植入体模式控制</RimCBM_AdvancedControl.label>
+  <RimCBM_AdvancedControl.description>研究框架占位。后续随正式植入体内容分配安装、能力与模式解锁；当前不限制已有基础功能。</RimCBM_AdvancedControl.description>
+  <RimCBM_HostAdaptation.label>植入体宿主适配</RimCBM_HostAdaptation.label>
+  <RimCBM_HostAdaptation.description>研究框架占位。后续随正式植入体内容分配安装、能力与模式解锁；当前不限制已有基础功能。</RimCBM_HostAdaptation.description>
+</LanguageData>

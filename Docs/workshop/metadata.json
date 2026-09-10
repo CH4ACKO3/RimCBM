@@ -1,0 +1,24 @@
+{
+  "title": "RimCBM",
+  "appId": 294100,
+  "publishedFileId": null,
+  "stage": "alpha",
+  "gameVersions": [
+    "1.6"
+  ],
+  "languages": [
+    "English",
+    "ChineseSimplified"
+  ],
+  "requiredWorkshopItems": [
+    2009463077
+  ],
+  "tags": [
+    "1.6"
+  ],
+  "repository": "https://github.com/CH4ACKO3/RimCBM",
+  "descriptions": {
+    "en": "Description.en.bbcode",
+    "zh-CN": "Description.zh-CN.bbcode"
+  }
+}
