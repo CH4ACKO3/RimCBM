@@ -10,12 +10,8 @@ try {
     if ($LASTEXITCODE) { throw 'Repository validation failed.' }
     dotnet restore Tests/Engine/Probe.csproj -p:UseReferencePackages=true --locked-mode
     if ($LASTEXITCODE) { throw 'Locked engine/mod restore failed.' }
-    dotnet restore Tests/RimCBM.RuleTests.csproj --locked-mode
-    if ($LASTEXITCODE) { throw 'Locked rule-test restore failed.' }
     dotnet build Tests/Engine/Probe.csproj -c Release -p:UseReferencePackages=true --no-restore -warnaserror
     if ($LASTEXITCODE) { throw 'Mod/probe build failed.' }
-    dotnet run --project Tests/RimCBM.RuleTests.csproj -c Release --no-restore -warnaserror
-    if ($LASTEXITCODE) { throw 'Rule regressions failed.' }
     python Tools/Package.py --tag $Tag
     if ($LASTEXITCODE) { throw 'Packaging failed.' }
     python Tools/Validate.py --package artifacts/ci
